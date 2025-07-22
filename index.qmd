@@ -1,0 +1,32 @@
+# Werkzeugbaustein Python {.unnumbered}
+
+::: {.border #Lizenz}
+
+:::: {layout="[20, 80]"}
+![](skript/00-bilder/CC-BY.svg){fig-alt="Symbol des Lizenzhinweises Creative Commons BY"}
+
+Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Python von Maik Poetzsch ist lizensiert unter [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de). Das Werk ist abrufbar auf [GitHub](https://github.com/bausteine-der-datenanalyse/w-python). Ausgenommen von der Lizenz sind alle Logos Dritter und anders gekennzeichneten Inhalte. 2025
+
+::::
+
+Zitiervorschlag
+
+Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Sebastian Seipel. 2025. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python“. <https://github.com/bausteine-der-datenanalyse/w-python>.
+
+BibTeX-Vorlage
+
+```
+@misc{BCD-w-python-2025,
+ title={Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python},
+ author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Poetzsch, Maik and Seipel, Sebastian},
+ year={2025},
+ url={https://github.com/bausteine-der-datenanalyse/w-python}} 
+```
+
+:::
+
+## Voraussetzungen
+{{< include voraussetzungen.md >}}
+
+## Lernziele
+{{< include lernziele.md >}}

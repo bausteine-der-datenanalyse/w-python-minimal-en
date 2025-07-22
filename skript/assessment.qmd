@@ -1,0 +1,116 @@
+# Lernzielkontrolle
+
+## Aufgabe 1: Datentypen und Typecasting
+
+Gegeben sind folgende Werte:
+
+- `wert1 = "42"`
+- `wert2 = 3.5`
+- `wert3 = True`
+
+Gib mit `type()` den Datentyp jedes Werts aus und wandle jeden in einen anderen sinnvollen Typ um. Gib die Ergebnisse aus.
+
+---
+
+## Aufgabe 2: Altersprüfung mit Bedingung
+
+Gegeben sei `alter = 16`.  
+Gib abhängig vom Alter aus:
+
+- „Volljährig“, wenn das Alter ≥ 18 ist
+- „Minderjährig“, wenn das Alter < 18 ist
+
+---
+
+## Aufgabe 3: Zahlen filtern und mitteln
+
+Gegeben sei die Liste:
+
+```python
+zahlen = [5, 8, 13, 20, 33, 40]
+```
+
+- Gib alle Zahlen > 10 aus.
+- Berechne und gib den Durchschnitt dieser Zahlen aus.
+
+---
+
+## Aufgabe 4: Wochentage & Slicing
+
+Gegeben sei:
+
+```python
+tage = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
+```
+
+- Gib alle Wochentage aus, die mit „S“ beginnen.
+- Gib nur die Arbeitstage (Mo–Fr) mit Slicing aus.
+
+---
+
+## Aufgabe 5: Funktion mit Parameter & Standardwert
+
+Erstelle eine Funktion `begruesse(name, sprache="de")`, die je nach Sprache Folgendes ausgibt:
+
+- Deutsch: „Hallo <Name>!“
+- Englisch: „Hello <Name>!“
+
+---
+
+## Aufgabe 6: Hobbys in Datei schreiben
+
+Gegeben sei eine Liste `hobbys = ["Lesen", "Kochen", "Sport"]`.
+
+Schreibe jeden Eintrag in eine neue Zeile der Datei `hobbys.txt`.
+
+---
+
+## Aufgabe 7: Datei lesen & .split() verwenden
+
+Angenommen, eine Datei enthält die Zeile:
+
+```
+Ali,Bente,Carlos,Dana
+```
+
+- Zerlege die Zeichenkette mit `.split(",")`.
+- Gib jeden Namen einzeln aus.
+
+---
+
+## Aufgabe 8: Namen sortieren und speichern
+
+Gegeben sei:
+
+```python
+namen = ["Zoe", "Anna", "Lukas", "Ben"]
+```
+
+- Sortiere die Liste alphabetisch.
+- Speichere die sortierte Liste in eine Datei `sortiert.txt`, ein Name pro Zeile.
+
+---
+
+## Aufgabe 9: Zahlen durch 3 ausgeben
+
+Erstelle mit einer Schleife eine Liste aller Zahlen zwischen 1 und 20, die durch 3 teilbar sind, und gib sie aus.
+
+---
+
+## Aufgabe 10: Verschachtelte Schleifen
+
+Gegeben seien:
+
+```python
+personen = ["Ali", "Bente"]
+hobbys = ["Lesen", "Sport"]
+```
+
+Erstelle eine Ausgabe wie:
+
+```
+Ali hat das Hobby: Lesen
+Ali hat das Hobby: Sport
+Bente hat das Hobby: Lesen
+Bente hat das Hobby: Sport
+```

@@ -1,0 +1,101 @@
+# Einführung
+
+::: {.border}
+![Logo der Programmiersprache Python](00-bilder/python-logo-and-wordmark-cc0-tm.png)
+
+Python Logo von Python Software Foundation steht unter der [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). Die Wort-Bild-Marke ist markenrechtlich geschützt: <https://www.python.org/psf/trademarks/>. Das Werk ist abrufbar auf [wikimedia](https://de.m.wikipedia.org/wiki/Datei:Python_logo_and_wordmark.svg). 2008
+::: 
+
+# Willkommen bei Python!
+
+Python ist eine moderne Programmiersprache, die sich besonders gut für 
+Einsteigerinnen und Einsteiger eignet. Sie ist leicht verständlich und 
+wird in vielen Bereichen eingesetzt – von der Datenanalyse bis hin zur 
+Webentwicklung.
+
+> In diesem Kurs lernen Sie Python Schritt für Schritt anhand praktischer Beispiele.
+
+## Lernziele dieses Kapitels
+
+Am Ende dieses Kapitels können Sie:
+
+- einfache Python-Programme schreiben,
+- Text auf dem Bildschirm ausgeben,
+- erste Variablen definieren und verwenden.
+
+## Ihr erstes Programm
+
+Die ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. 
+WIr lassen uns die Worte 'Hello World' ausgeben. Dazu nutzen wir den print-Befehl
+ `print()`:
+
+```{python}
+print("Hallo Welt!")
+```
+
+
+**Was passiert hier?**
+- `print()` ist eine sogenannte **Funktion**, die etwas auf dem Bildschirm ausgibt.
+- Der Text `"Hello World!"` wird angezeigt.
+- Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.
+
+## Variablen – Namen für Werte
+
+Variablen sind wie beschriftete Schubladen: Sie speichern Informationen unter einem Namen.
+
+```{python}
+name = "Frau Müller"
+alter = 32
+```
+
+Sie können diese Variablen verwenden, um dynamische Ausgaben zu erzeugen:
+
+```{python}
+print(name + " ist " + str(alter) + " Jahre alt.")
+```
+
+Zu beachten ist hier, dass sie versuchen sowohl eine Zahl, als auch Text auszugeben. Daher müssen wir mit der Funktion 'str()' die Zahl in Text umwandeln.
+
+::: {.callout-tip collapse="true"}
+
+## ✏️ Aufgabe: Begrüßung mit Alter
+
+Schreiben Sie ein Programm, das Sie mit Ihrem Namen begrüßt:
+
+```
+Hallo Frau Müller!
+```
+
+Tipp: In Python können Sie Texte mit `+` zusammenfügen. Denken Sie daran, dass 
+Strings in Anführungszeichen stehen müssen.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+mein_name = "Ihr Name hier"
+print("Hallo " + mein_name + "!")
+```
+:::
+
+Erweitern Sie Ihr Programm so, dass es eine Begrüßung inklusive Alter ausgibt:
+
+```
+Hallo Frau Müller!
+Sie sind 32 Jahre alt.
+```
+
+Tipp: Verwenden Sie `print()` mehrmals oder fügen Sie Texte zusammen.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+name = "Frau Müller"
+alter = 32
+
+print("Hallo " + name + "!")
+print("Sie sind " + str(alter) + " Jahre alt.")
+
+```
+:::
+
+:::

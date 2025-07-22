@@ -1,0 +1,163 @@
+# Arbeiten mit Dateien
+
+Programme arbeiten oft nicht nur mit Benutzereingaben, sondern auch mit **Textdateien** – zum Beispiel um Daten zu speichern oder zu laden.
+
+Python bietet einfache Funktionen, um:
+
+- Dateien **zu öffnen**,
+- ihren **Inhalt zu lesen** oder **hineinzuschreiben**,
+- und die Datei **wieder zu schließen**.
+
+## Lernziele dieses Kapitels
+
+Am Ende dieses Kapitels können Sie:
+
+- Dateien mit `open()` öffnen,
+- Inhalte aus Textdateien einlesen,
+- Texte in Dateien schreiben,
+- mit `with`-Blöcken sicher und einfach arbeiten.
+
+## Eine Datei einlesen
+
+```{python}
+# Beispiel: Datei lesen
+with open("01-daten/beispiel.txt", "r") as datei:
+    inhalt = datei.read()
+    print(inhalt)
+```
+
+- `"r"` steht für **read** (lesen).
+- `with` sorgt dafür, dass die Datei nach dem Lesen automatisch geschlossen wird.
+- `read()` liest den **gesamten Inhalt** der Datei als String.
+
+## Zeilenweise lesen
+
+```{python}
+with open("01-daten/beispiel.txt", "r") as datei:
+    for zeile in datei:
+        print("Zeile:", zeile.strip())
+```
+
+::: {.callout-note collapse="false"}
+`.strip()` entfernt Leerzeichen und Zeilenumbrüche am Anfang und Ende.
+:::
+
+::: {.callout-tip collapse="true"}
+## Aufgabe: Datei lesen
+
+Angenommen, es gibt eine Datei `gruesse.txt` mit folgendem Inhalt:
+
+```
+Hallo Anna
+Guten Morgen Ben
+Willkommen Carla
+```
+
+Schreiben Sie ein Programm, das jede Zeile einzeln einliest und mit `print(...)` wiedergibt.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+with open("01-daten/gruesse.txt", "r") as f:
+    for zeile in f:
+        print(zeile.strip())
+```
+:::
+:::
+
+## Alle Zeilen auf einmal lesen mit `readlines()`
+
+Statt über eine Datei zu iterieren, können Sie alle Zeilen auf einmal als Liste einlesen:
+
+```{python}
+with open("01-daten/beispiel.txt", "r") as f:
+    zeilen = f.readlines()
+    print(zeilen)
+```
+
+::: {.callout-important collapse="false"}
+Oftmals bestehen die eingelesenen Zeilen aus Werten, die durch ein spezifisches 
+Trennzeichen z.B. ",". Um diese Zeilen dann in die einzelnen Werte zu trennen, 
+benutzen wir die `.split()`-Funktion.
+
+```{python}
+zeile = "319,12,14,190,342"
+print(zeile.split(","))
+```
+
+Jede Zeile endet mit `\n`, deshalb kann eine Nachbearbeitung mit `.strip()` sinnvoll sein:
+
+```{python}
+for zeile in zeilen:
+    print(zeile.strip())
+```
+:::
+
+## In eine Datei schreiben
+
+```{python}
+with open("ausgabe.txt", "w") as datei:
+    datei.write("Das ist eine neue Zeile.\n")
+    datei.write("Und noch eine.")
+```
+
+- `"w"` steht für **write** (schreiben).
+- Achtung: Eine vorhandene Datei wird **überschrieben**!
+
+## Zeilenweise schreiben mit Schleife
+
+```{python}
+daten = ["Apfel", "Banane", "Kirsche"]
+
+with open("obst.txt", "w") as f:
+    for eintrag in daten:
+        f.write(eintrag + "\n")
+```
+
+::: {.callout-important collapse="false"}
+Jede Zeile endet mit `\n` für einen Zeilenumbruch.
+:::
+
+::: {.callout-tip collapse="true"}
+## Aufgabe: Liste in Datei schreiben
+
+Gegeben ist eine Liste von Städten:
+
+```python
+staedte = ["Berlin", "Hamburg", "München"]
+```
+
+- Schreiben Sie ein Programm, das jede Stadt in eine neue Zeile einer Datei `staedte.txt` schreibt.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+staedte = ["Berlin", "Hamburg", "München"]
+
+with open("staedte.txt", "w") as f:
+    for stadt in staedte:
+        f.write(stadt + "\n")
+```
+:::
+:::
+
+## Dateien manuell schließen mit `close()`
+
+Wenn Sie **keinen `with`-Block** verwenden, müssen Sie die Datei selbst schließen 
+– sonst bleibt sie geöffnet:
+
+```{python}
+datei = open("01-daten/beispiel.txt", "w")
+datei.write("Dies ist ein Test.")
+datei.close()
+```
+
+::: {.callout-important collapse="false"}
+`close()` ist wichtig, damit Änderungen gespeichert werden und die Datei nicht 
+gesperrt bleibt.
+
+**Empfehlung**: Nutzen Sie immer `with open(...)`, da Python die Datei dann 
+automatisch schließt – auch bei Fehlern.
+:::
+
+

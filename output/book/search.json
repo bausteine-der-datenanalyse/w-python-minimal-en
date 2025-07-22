@@ -1,0 +1,462 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bausteine Computergestützter Datenanalyse",
+    "section": "",
+    "text": "Werkzeugbaustein Python",
+    "crumbs": [
+      "Werkzeugbaustein Python"
+    ]
+  },
+  {
+    "objectID": "index.html#voraussetzungen",
+    "href": "index.html#voraussetzungen",
+    "title": "Bausteine Computergestützter Datenanalyse",
+    "section": "Voraussetzungen",
+    "text": "Voraussetzungen\nKeine Voraussetzungen",
+    "crumbs": [
+      "Werkzeugbaustein Python"
+    ]
+  },
+  {
+    "objectID": "index.html#lernziele",
+    "href": "index.html#lernziele",
+    "title": "Bausteine Computergestützter Datenanalyse",
+    "section": "Lernziele",
+    "text": "Lernziele\nIn diesem Bausteine werden die Grundzüge der Programmierung mit Python vermittelt. In diesem Baustein lernen Sie …\n\nGrundlagen des Programmierens\nAusgaben in Python, Grundlegende Datentypen, FLusskontrolle\ndie Dokumentation zu lesen und zu verwenden\nModule und Pakete laden",
+    "crumbs": [
+      "Werkzeugbaustein Python"
+    ]
+  },
+  {
+    "objectID": "skript/einleitung.html",
+    "href": "skript/einleitung.html",
+    "title": "1  Einführung",
+    "section": "",
+    "text": "2 Willkommen bei Python!\nPython ist eine moderne Programmiersprache, die sich besonders gut für Einsteigerinnen und Einsteiger eignet. Sie ist leicht verständlich und wird in vielen Bereichen eingesetzt – von der Datenanalyse bis hin zur Webentwicklung.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
+    ]
+  },
+  {
+    "objectID": "skript/einleitung.html#lernziele-dieses-kapitels",
+    "href": "skript/einleitung.html#lernziele-dieses-kapitels",
+    "title": "1  Einführung",
+    "section": "2.1 Lernziele dieses Kapitels",
+    "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie: - einfache Python-Programme schreiben, - Text auf dem Bildschirm ausgeben, - erste Variablen definieren und verwenden.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
+    ]
+  },
+  {
+    "objectID": "skript/einleitung.html#ihr-erstes-programm",
+    "href": "skript/einleitung.html#ihr-erstes-programm",
+    "title": "1  Einführung",
+    "section": "2.2 Ihr erstes Programm",
+    "text": "2.2 Ihr erstes Programm\nDie ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. WIr lassen uns die Worte ‘Hello World’ ausgeben. Dazu nutzen wir den print-Befehl print():\n\nprint(\"Hallo Welt!\")\n\nHallo Welt!\n\n\nWas passiert hier? - print() ist eine sogenannte Funktion, die etwas auf dem Bildschirm ausgibt. - Der Text \"Hello World!\" wird angezeigt. - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
+    ]
+  },
+  {
+    "objectID": "skript/einleitung.html#variablen-namen-für-werte",
+    "href": "skript/einleitung.html#variablen-namen-für-werte",
+    "title": "1  Einführung",
+    "section": "2.3 Variablen – Namen für Werte",
+    "text": "2.3 Variablen – Namen für Werte\nVariablen sind wie beschriftete Schubladen: Sie speichern Informationen unter einem Namen.\n\nname = \"Frau Müller\"\nalter = 32\n\nSie können diese Variablen verwenden, um dynamische Ausgaben zu erzeugen:\n\nprint(name + \" ist \" + str(alter) + \" Jahre alt.\")\n\nFrau Müller ist 32 Jahre alt.\n\n\nZu beachten ist hier, dass sie versuchen sowohl eine Zahl, als auch Text auszugeben. Daher müssen wir mit der Funktion ‘str()’ die Zahl in Text umwandeln.\n\n\n\n\n\n\n✏️ Aufgabe: Begrüßung mit Alter\n\n\n\n\n\nSchreiben Sie ein Programm, das Sie mit Ihrem Namen begrüßt:\nHallo Frau Müller!\nTipp: In Python können Sie Texte mit + zusammenfügen. Denken Sie daran, dass Strings in Anführungszeichen stehen müssen.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nmein_name = \"Ihr Name hier\"\nprint(\"Hallo \" + mein_name + \"!\")\n\nHallo Ihr Name hier!\n\n\n\n\n\nErweitern Sie Ihr Programm so, dass es eine Begrüßung inklusive Alter ausgibt:\nHallo Frau Müller!\nSie sind 32 Jahre alt.\nTipp: Verwenden Sie print() mehrmals oder fügen Sie Texte zusammen.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nname = \"Frau Müller\"\nalter = 32\n\nprint(\"Hallo \" + name + \"!\")\nprint(\"Sie sind \" + str(alter) + \" Jahre alt.\")\n\nHallo Frau Müller!\nSie sind 32 Jahre alt.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html",
+    "href": "skript/datentypen.html",
+    "title": "2  Datentypen verstehen",
+    "section": "",
+    "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#lernziele-dieses-kapitels",
+    "href": "skript/datentypen.html#lernziele-dieses-kapitels",
+    "title": "2  Datentypen verstehen",
+    "section": "",
+    "text": "die wichtigsten Datentypen unterscheiden,\nmit Zahlen und Texten rechnen bzw. arbeiten,\neinfache Berechnungen und Ausgaben erstellen.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#einleitung",
+    "href": "skript/datentypen.html#einleitung",
+    "title": "2  Datentypen verstehen",
+    "section": "2.2 Einleitung",
+    "text": "2.2 Einleitung\nIn Python gibt es verschiedene Datentypen. Diese beschreiben, welche Art von Daten Sie in Variablen speichern. Das ist wichtig, weil viele Operationen – wie zum Beispiel + – je nach Datentyp etwas anderes bedeuten:\n\n+ bei Zahlen bedeutet Addition,\n+ bei Text bedeutet Zusammenfügen (Konkatenation).\n\nBevor wir also mit komplexeren Programmen arbeiten, sollten wir verstehen, welche Datentypen es gibt und wie man mit ihnen umgeht.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#die-wichtigsten-datentypen",
+    "href": "skript/datentypen.html#die-wichtigsten-datentypen",
+    "title": "2  Datentypen verstehen",
+    "section": "2.3 Die wichtigsten Datentypen",
+    "text": "2.3 Die wichtigsten Datentypen\nHier sind die grundlegenden Datentypen in Python:\n\n\n\nTyp\nBeispiel\nBedeutung\n\n\n\n\nint\n10\nGanze Zahl\n\n\nfloat\n3.14\nKommazahl\n\n\nstr\n\"Hallo\"\nText (String)\n\n\nbool\nTrue, False\nWahrheitswert (Ja/Nein)\n\n\n\nSie können den Typ einer Variable mit der Funktion type() herausfinden:\n\nwert = 42\nprint(type(wert))  # Ausgabe: &lt;class 'int'&gt;\n\n&lt;class 'int'&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#unterschiede-zwischen-int-und-float",
+    "href": "skript/datentypen.html#unterschiede-zwischen-int-und-float",
+    "title": "2  Datentypen verstehen",
+    "section": "2.4 Unterschiede zwischen int und float",
+    "text": "2.4 Unterschiede zwischen int und float\nIn Python unterscheidet man zwischen ganzen Zahlen (int) und Kommazahlen (float):\n\nint steht für „integer“ – also ganze Zahlen wie 1, 0, -10\nfloat steht für „floating point number“ – also Zahlen mit Dezimalstellen wie 3.14, 0.5, -2.0\n\n\na = 10       # int\nb = 2.5      # float\n\nprint(\"a:\", a, \"| Typ:\", type(a))\nprint(\"b:\", b, \"| Typ:\", type(b))\n\na: 10 | Typ: &lt;class 'int'&gt;\nb: 2.5 | Typ: &lt;class 'float'&gt;\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nDie Unterscheidung ist wichtig: Manche Rechenoperationen verhalten sich je nach Datentyp leicht unterschiedlich.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#was-sind-booleans-bool",
+    "href": "skript/datentypen.html#was-sind-booleans-bool",
+    "title": "2  Datentypen verstehen",
+    "section": "2.5 Was sind Booleans (bool)?",
+    "text": "2.5 Was sind Booleans (bool)?\nEin Boolean ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:\n\nTrue (wahr)\nFalse (falsch)\n\nSolche Werte begegnen uns zum Beispiel bei Fragen wie:\n\nIst die Temperatur über 30 °C?\nHat die Datei einen bestimmten Namen?\nIst die Liste leer?\n\n\nist_sonnig = True\nhat_regenschirm = False\n\nprint(\"Sonnig:\", ist_sonnig)\nprint(\"Regenschirm dabei?\", hat_regenschirm)\nprint(\"Typ von 'ist_sonnig':\", type(ist_sonnig))\n\nSonnig: True\nRegenschirm dabei? False\nTyp von 'ist_sonnig': &lt;class 'bool'&gt;\n\n\nBooleans werden besonders in Bedingungen und Vergleichen verwendet, was Sie in Kapitel 4 genauer kennenlernen.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#rechnen-mit-zahlen",
+    "href": "skript/datentypen.html#rechnen-mit-zahlen",
+    "title": "2  Datentypen verstehen",
+    "section": "2.6 Rechnen mit Zahlen",
+    "text": "2.6 Rechnen mit Zahlen\nPython kann wie ein Taschenrechner verwendet werden:\n\n\n\nOperator\nBeschreibung\n\n\n\n\n+, -\nAddition / Subtraktion\n\n\n*, /\nMultiplikation / Division\n\n\n//, %\nGanzzahlige Division / Rest\n\n\n**\nPotenzieren\n\n\n\n\na = 10\nb = 3\n\nprint(\"Addition:\", a + b)\nprint(\"Subtraktion:\", a - b)\nprint(\"Multiplikation:\", a * b)\nprint(\"Potenzieren\", a**b)\nprint(\"Division:\", a / b)\nprint(\"Ganzzahlige Division:\", a // b)\nprint(\"Division mit Rest:\", a % b)\n\nAddition: 13\nSubtraktion: 7\nMultiplikation: 30\nPotenzieren 1000\nDivision: 3.3333333333333335\nGanzzahlige Division: 3\nDivision mit Rest: 1\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\n// bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es auch %. Hier wird eine Ganzzahldivision durchgeführt und der Rest ausgegeben.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#arbeiten-mit-text",
+    "href": "skript/datentypen.html#arbeiten-mit-text",
+    "title": "2  Datentypen verstehen",
+    "section": "2.7 Arbeiten mit Text",
+    "text": "2.7 Arbeiten mit Text\nTexte (Strings) können miteinander kombiniert werden:\n\nvorname = \"Anna\"\nnachname = \"Beispiel\"\nprint(\"Willkommen, \" + vorname + \" \" + nachname + \"!\")\n\nWillkommen, Anna Beispiel!\n\n\nWenn Sie Text und Zahlen kombinieren wollen, müssen Sie die Zahl in einen String umwandeln:\n\npunkte = 95\nprint(\"Sie haben \" + str(punkte) + \" Punkte erreicht.\")\n\nSie haben 95 Punkte erreicht.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#umwandlung-von-datentypen-typecasting",
+    "href": "skript/datentypen.html#umwandlung-von-datentypen-typecasting",
+    "title": "2  Datentypen verstehen",
+    "section": "2.8 Umwandlung von Datentypen (Typecasting)",
+    "text": "2.8 Umwandlung von Datentypen (Typecasting)\nManchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.\nDas nennt man Typecasting. Hier sind die wichtigsten Funktionen dafür:\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\nstr())\nZahl → Text\nstr(42) → \"42\"\n\n\nint()\nText/Zahl → ganze Zahl\nint(\"10\") → 10\n\n\nfloat()\nText/Zahl → Kommazahl\nfloat(\"3.14\") → 3.14\n\n\n\n\n# Beispiel: Zahl als Text anzeigen\npunkte = 100\nprint(\"Sie haben \" + str(punkte) + \" Punkte.\")\n\n# Beispiel: String in Zahl umwandeln und berechnen\neingabe = \"3.5\"\nwert = float(eingabe) * 2\nprint(\"Doppelt so viel:\", wert)\n\nSie haben 100 Punkte.\nDoppelt so viel: 7.0\n\n\nAchten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – int(\"abc\") führt zu einem Fehler.\n\n\n\n\n\n\nAufgabe: Alter in Tagen\n\n\n\n\n\nBerechnen Sie, wie alt eine Person in Tagen ist.\n\nalter_jahre = 32\ntage = alter_jahre * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.\n\n\nTipp: Denken Sie an die Umwandlung in einen String, wenn Sie die Zahl ausgeben möchten.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nalter = 32\ntage = alter * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html",
+    "href": "skript/flusskontrolle.html",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "",
+    "text": "3.1 Lernziele dieses Kapitels\nProgramme müssen oft Entscheidungen treffen – zum Beispiel abhängig von einer Benutzereingabe oder einem bestimmten Wert. Ebenso müssen bestimmte Aktionen mehrfach durchgeführt werden.\nDafür gibt es zwei zentrale Elemente in Python:\nAm Ende dieses Kapitels können Sie:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#lernziele-dieses-kapitels",
+    "href": "skript/flusskontrolle.html#lernziele-dieses-kapitels",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "",
+    "text": "Bedingungen formulieren und mit if, elif, else nutzen,\nVergleichsoperatoren verwenden (==, &lt;, !=, …),\nWiederholungen mit while und for umsetzen.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#bedingungen-mit-if-elif-else",
+    "href": "skript/flusskontrolle.html#bedingungen-mit-if-elif-else",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.2 Bedingungen mit if, elif, else",
+    "text": "3.2 Bedingungen mit if, elif, else\n\nalter = 17\n\nif alter &gt;= 18:\n    print(\"Sie sind volljährig.\")\nelse:\n    print(\"Sie sind minderjährig.\")\n\nSie sind minderjährig.\n\n\nMehrere Fälle unterscheiden:\n\nnote = 2.3\n\nif note &lt;= 1.5:\n    print(\"Sehr gut\")\nelif note &lt;= 2.5:\n    print(\"Gut\")\nelif note &lt;= 3.5:\n    print(\"Befriedigend\")\nelse:\n    print(\"Ausreichend oder schlechter\")\n\nGut",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#vergleichsoperatoren",
+    "href": "skript/flusskontrolle.html#vergleichsoperatoren",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.3 Vergleichsoperatoren",
+    "text": "3.3 Vergleichsoperatoren\n\n\n\nAusdruck\nBedeutung\n\n\n\n\na == b\ngleich\n\n\na != b\nungleich\n\n\na &lt; b\nkleiner als\n\n\na &gt; b\ngrößer als\n\n\na &lt;= b\nkleiner oder gleich\n\n\na &gt;= b\ngrößer oder gleich",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#wiederholungen-mit-while",
+    "href": "skript/flusskontrolle.html#wiederholungen-mit-while",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.4 Wiederholungen mit while",
+    "text": "3.4 Wiederholungen mit while\n\nzähler = 0\n\nwhile zähler &lt; 5:\n    print(\"Zähler ist:\", zähler)\n    zähler += 1\n\nZähler ist: 0\nZähler ist: 1\nZähler ist: 2\nZähler ist: 3\nZähler ist: 4\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nAchten Sie auf eine Abbruchbedingung – sonst läuft die Schleife endlos!",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#schleifen-mit-for-und-range",
+    "href": "skript/flusskontrolle.html#schleifen-mit-for-und-range",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.5 Schleifen mit for und range()",
+    "text": "3.5 Schleifen mit for und range()\nWenn Sie eine Schleife genau eine bestimmte Anzahl von Malen durchlaufen möchten, nutzen Sie for mit range():\n\nfor i in range(5):\n    print(\"Durchlauf:\", i)\n\nDurchlauf: 0\nDurchlauf: 1\nDurchlauf: 2\nDurchlauf: 3\nDurchlauf: 4\n\n\nStart- und Endwert festlegen:\n\nfor i in range(1, 6):\n    print(i)\n\n1\n2\n3\n4\n5",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#was-macht-range-genau",
+    "href": "skript/flusskontrolle.html#was-macht-range-genau",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.6 Was macht range() genau?",
+    "text": "3.6 Was macht range() genau?\nDie Funktion range() erzeugt eine Abfolge von Zahlen, über die Sie mit einer for-Schleife iterieren können.\n\nVarianten:\nrange(5)\n➡️ ergibt: 0, 1, 2, 3, 4 (startet bei 0, endet vor 5)\nrange(2, 6)\n➡️ ergibt: 2, 3, 4, 5 (startet bei 2, endet vor 6)\nrange(1, 10, 2)\n➡️ ergibt: 1, 3, 5, 7, 9 (Schrittweite = 2)\nrange() erzeugt keine echte Liste, sondern ein sogenanntes „range-Objekt“, das wie eine Liste verwendet werden kann.\n\n\n\n\n\n\n✏️ Aufgabe: Zähle von 1 bis 10\n\n\n\n\n\nNutzen Sie eine for-Schleife, um die Zahlen von 1 bis 10 auszugeben.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nfor i in range(1, 11):\n    print(i)\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAufgabe: Gerade Zahlen ausgeben\n\n\n\n\n\nGeben Sie alle geraden Zahlen von 0 bis 20 aus. Tipp: Eine Zahl ist gerade, wenn zahl % 2 == 0.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nfor zahl in range(0, 21):\n    if zahl % 2 == 0:\n        print(zahl)\n\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html",
+    "href": "skript/listen_iterationen.html",
+    "title": "4  Mehrere Werte speichern",
+    "section": "",
+    "text": "4.1 Was ist eine Liste?\nBisher haben Sie einzelne Werte in Variablen gespeichert. Doch was, wenn Sie eine ganze Reihe von Zahlen, Namen oder Werten auf einmal speichern möchten?\nDafür gibt es in Python Listen. In diesem Kapitel lernen Sie außerdem, wie man mit for-Schleifen über Listen iteriert.\nEine Liste ist eine geordnete Sammlung von Werten eines Datentyps.\nnamen = [\"Ali\", \"Bente\", \"Carlos\"]\nnoten = [1.7, 2.3, 1.3, 2.0]\nAuf Elemente greifen Sie mit eckigen Klammern zu:\nprint(namen[0])  # erstes Element\nprint(noten[-1]) # letztes Element\n\nAli\n2.0",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#teile-aus-listen-ausschneiden-slicing",
+    "href": "skript/listen_iterationen.html#teile-aus-listen-ausschneiden-slicing",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.2 Teile aus Listen ausschneiden – Slicing",
+    "text": "4.2 Teile aus Listen ausschneiden – Slicing\nMit dem sogenannten Slicing können Sie gezielt Ausschnitte aus einer Liste entnehmen. Dabei geben Sie an, wo der Ausschnitt beginnt und wo er endet (der Endwert wird nicht mehr mitgenommen):\n\nzahlen = [10, 20, 30, 40, 50, 60]\nprint(zahlen[1:4])  # Ausgabe: [20, 30, 40]\n\n[20, 30, 40]\n\n\n\nSyntax: liste[start:stop]\n\nstart: Index, bei dem das Slicing beginnt (inklusive)\nstop: Index, an dem es endet (exklusive)\nDer Startwert kann auch weggelassen werden: [:3] → erstes bis drittes Element\nEbenso der Endwert: [3:] → ab dem vierten Element bis zum Ende\nGanze Kopie: [:]\n\n\nprint(zahlen[:3])   # [10, 20, 30]\nprint(zahlen[3:])   # [40, 50, 60]\nprint(zahlen[:])    # vollständige Kopie\n\n[10, 20, 30]\n[40, 50, 60]\n[10, 20, 30, 40, 50, 60]\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nSie können auch mit negativen Indizes arbeiten (-1 ist das letzte Element):\n\nprint(zahlen[-3:])  # [40, 50, 60]\n\n[40, 50, 60]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#über-listen-iterieren",
+    "href": "skript/listen_iterationen.html#über-listen-iterieren",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.3 Über Listen iterieren",
+    "text": "4.3 Über Listen iterieren\nMit einer for-Schleife können Sie über jedes Element in einer Liste iterieren:\n\nnamen = [\"Ali\", \"Bente\", \"Carlos\"]\n\nfor name in namen:\n    print(\"Hallo\", name + \"!\")\n\nHallo Ali!\nHallo Bente!\nHallo Carlos!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#erweiterung-bedingte-ausgaben",
+    "href": "skript/listen_iterationen.html#erweiterung-bedingte-ausgaben",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.4 Erweiterung: Bedingte Ausgaben",
+    "text": "4.4 Erweiterung: Bedingte Ausgaben\nSie können in der Schleife mit if filtern:\n\ntemperaturen = [14.2, 17.5, 19.0, 21.3, 18.4]\n\nfor t in temperaturen:\n    if t &gt; 18:\n        print(t, \"ist ein warmer Tag\")\n\n19.0 ist ein warmer Tag\n21.3 ist ein warmer Tag\n18.4 ist ein warmer Tag",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#durchschnitt-berechnen",
+    "href": "skript/listen_iterationen.html#durchschnitt-berechnen",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.5 Durchschnitt berechnen",
+    "text": "4.5 Durchschnitt berechnen\nPython stellt nützliche Funktionen bereit, z. B. sum() und len():\n\nnoten = [1.7, 2.3, 1.3, 2.0]\n\ndurchschnitt = sum(noten) / len(noten)\nprint(\"Durchschnittsnote:\", round(durchschnitt, 2))\n\nDurchschnittsnote: 1.82",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#listen-erweitern-.append",
+    "href": "skript/listen_iterationen.html#listen-erweitern-.append",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.6 Listen erweitern: .append()",
+    "text": "4.6 Listen erweitern: .append()\nManchmal kennen Sie die Listenelemente nicht vorher – dann können Sie neue Werte nachträglich hinzufügen:\n\nnamen = []\n\nnamen.append(\"Ali\")\nnamen.append(\"Bente\")\n\nprint(namen)\n\n['Ali', 'Bente']\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nDie Methode .append()) hängt einen neuen Wert an das Ende der Liste.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#verschachtelte-schleifen",
+    "href": "skript/listen_iterationen.html#verschachtelte-schleifen",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.7 Verschachtelte Schleifen",
+    "text": "4.7 Verschachtelte Schleifen\nWenn Sie mit mehrdimensionalen Daten arbeiten – z. B. eine Tabelle mit mehreren Zeilen – können Sie Schleifen ineinander verschachteln:\n\nwochentage = [\"Mo\", \"Di\", \"Mi\"]\nstunden = [1, 2, 3]\n\nfor tag in wochentage:\n    for stunde in stunden:\n        print(f\"{tag}, Stunde {stunde}\")\n\nMo, Stunde 1\nMo, Stunde 2\nMo, Stunde 3\nDi, Stunde 1\nDi, Stunde 2\nDi, Stunde 3\nMi, Stunde 1\nMi, Stunde 2\nMi, Stunde 3\n\n\nDas ergibt:\nMo, Stunde 1\nMo, Stunde 2\nMo, Stunde 3\nDi, Stunde 1\n...",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#listen-sortieren",
+    "href": "skript/listen_iterationen.html#listen-sortieren",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.8 Listen sortieren",
+    "text": "4.8 Listen sortieren\nMit sorted() können Sie Listen alphabetisch oder numerisch sortieren:\n\nnamen = [\"Zoe\", \"Anna\", \"Ben\"]\nsortiert = sorted(namen)\n\nprint(sortiert)\n\n['Anna', 'Ben', 'Zoe']\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nDie Original-Liste bleibt unverändert.\nWenn Sie die Liste direkt verändern möchten, geht das mit:\n\nnamen.sort()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html",
+    "href": "skript/funktionen.html",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "",
+    "text": "5.1 Lernziele dieses Kapitels\nStellen Sie sich vor, Sie müssen eine bestimmte Berechnung mehrfach im Programm durchführen. Anstatt den Code jedes Mal neu zu schreiben, können Sie ihn in einer Funktion bündeln.\nFunktionen sind ein zentrales Werkzeug, um Code:\nAm Ende dieses Kapitels können Sie:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html#lernziele-dieses-kapitels",
+    "href": "skript/funktionen.html#lernziele-dieses-kapitels",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "",
+    "text": "eigene Funktionen mit def erstellen,\nParameter übergeben und Rückgabewerte nutzen,\nFunktionen sinnvoll in Programmen einsetzen.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html#eine-funktion-definieren",
+    "href": "skript/funktionen.html#eine-funktion-definieren",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.2 Eine Funktion definieren",
+    "text": "5.2 Eine Funktion definieren\nEine Funktion besteht aus folgenden Teilen:\n\nDefinition mit def\nFunktionsname\nParameter in Klammern (optional)\nEinrückung für den Funktionskörper\n(optional) return-Anweisung\n\nBeispiel:\n\ndef hallo(name=\"Gast\"):\n    begruessung = \"Hallo \" + name + \"!\"\n    return begruessung\n\nFangen wir mit dem ersten Stichwort an. Funktionen werden mit def definiert und können beliebig oft aufgerufen werden:\n\ndef begruessung():\n    print(\"Hallo und willkommen!\")\n\nSie wird erst ausgeführt, wenn Sie sie aufrufen:\n\nbegruessung()\n\nHallo und willkommen!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html#parameter-übergeben",
+    "href": "skript/funktionen.html#parameter-übergeben",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.3 Parameter übergeben",
+    "text": "5.3 Parameter übergeben\nFunktionen können Eingabewerte (Parameter) erhalten:\n\ndef begruessung(name):\n    print(\"Hallo\", name + \"!\")\n\nbegruessung(\"Alex\")\n\nHallo Alex!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html#rückgabewerte-mit-return",
+    "href": "skript/funktionen.html#rückgabewerte-mit-return",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.4 Rückgabewerte mit return",
+    "text": "5.4 Rückgabewerte mit return\nEine Funktion kann auch einen Wert zurückgeben:\n\ndef quadrat(zahl):\n    return zahl * zahl\n\nergebnis = quadrat(5)\nprint(ergebnis)\n\n25",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html#beispiel-umrechnungen",
+    "href": "skript/funktionen.html#beispiel-umrechnungen",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.5 Beispiel: Umrechnungen",
+    "text": "5.5 Beispiel: Umrechnungen\n\nEuro zu US-Dollar\n\ndef euro_zu_usd(betrag_euro):\n    wechselkurs = 1.09\n    return betrag_euro * wechselkurs\n\nprint(\"20 € sind\", euro_zu_usd(20), \"US-Dollar.\")\n\n20 € sind 21.8 US-Dollar.\n\n\n\n\n\n\n\n\nAufgabe: Begrüßung mit Name\n\n\n\n\n\nErstellen Sie eine Funktion begruesse(name), die den Namen in einem Begrüßungstext verwendet:\nHallo Fatima, schön dich zu sehen!\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\ndef begruesse(name):\n    print(\"Hallo\", name + \", schön dich zu sehen!\")\n\nbegruesse(\"Fatima\")\n\nHallo Fatima, schön dich zu sehen!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAufgabe: Temperaturumrechnung\n\n\n\n\n\nSchreiben Sie eine Funktion, die Celsius in Fahrenheit umrechnet:\nFormel: [ F = C + 32 ]\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\ndef celsius_zu_fahrenheit(c):\n    return c * 1.8 + 32\n\nprint(celsius_zu_fahrenheit(20))\n\n68.0",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html#parameter-mit-standardwerten",
+    "href": "skript/funktionen.html#parameter-mit-standardwerten",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.6 Parameter mit Standardwerten",
+    "text": "5.6 Parameter mit Standardwerten\nSie können Parametern Standardwerte zuweisen. So kann die Funktion auch ohne Angabe eines Werts aufgerufen werden:\n\ndef begruessung(name=\"Gast\"):\n    print(\"Hallo\", name + \"!\")\n\nbegruessung()         # Hallo Gast!\nbegruessung(\"Maria\")  # Hallo Maria!\n\nHallo Gast!\nHallo Maria!\n\n\n\n\n\n\n\n\nprint() vs. return\n\n\n\n\n\nDiese beiden Begriffe werden oft verwechselt:\n\n\n\nAusdruck\nBedeutung\n\n\n\n\nprint()\nzeigt einen Text auf dem Bildschirm\n\n\nreturn\ngibt einen Wert an den Aufrufer zurück\n\n\n\nBeispiel:\n\ndef verdoppeln(x):\n    return x * 2\n\n# Ausgabe sichtbar machen\nprint(verdoppeln(5))  # Ausgabe: 10\n\n10",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html",
+    "href": "skript/lesen_schreiben.html",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "",
+    "text": "6.1 Lernziele dieses Kapitels\nProgramme arbeiten oft nicht nur mit Benutzereingaben, sondern auch mit Textdateien – zum Beispiel um Daten zu speichern oder zu laden.\nPython bietet einfache Funktionen, um:\nAm Ende dieses Kapitels können Sie:",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html#lernziele-dieses-kapitels",
+    "href": "skript/lesen_schreiben.html#lernziele-dieses-kapitels",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "",
+    "text": "Dateien mit open() öffnen,\nInhalte aus Textdateien einlesen,\nTexte in Dateien schreiben,\nmit with-Blöcken sicher und einfach arbeiten.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html#eine-datei-einlesen",
+    "href": "skript/lesen_schreiben.html#eine-datei-einlesen",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.2 Eine Datei einlesen",
+    "text": "6.2 Eine Datei einlesen\n\n# Beispiel: Datei lesen\nwith open(\"01-daten/beispiel.txt\", \"r\") as datei:\n    inhalt = datei.read()\n    print(inhalt)\n\nDies ist ein Test.\n\n\n\n\"r\" steht für read (lesen).\nwith sorgt dafür, dass die Datei nach dem Lesen automatisch geschlossen wird.\nread() liest den gesamten Inhalt der Datei als String.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html#zeilenweise-lesen",
+    "href": "skript/lesen_schreiben.html#zeilenweise-lesen",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.3 Zeilenweise lesen",
+    "text": "6.3 Zeilenweise lesen\n\nwith open(\"01-daten/beispiel.txt\", \"r\") as datei:\n    for zeile in datei:\n        print(\"Zeile:\", zeile.strip())\n\nZeile: Dies ist ein Test.\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\n.strip() entfernt Leerzeichen und Zeilenumbrüche am Anfang und Ende.\n\n\n\n\n\n\n\n\n\nAufgabe: Datei lesen\n\n\n\n\n\nAngenommen, es gibt eine Datei gruesse.txt mit folgendem Inhalt:\nHallo Anna\nGuten Morgen Ben\nWillkommen Carla\nSchreiben Sie ein Programm, das jede Zeile einzeln einliest und mit print(...) wiedergibt.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nwith open(\"01-daten/gruesse.txt\", \"r\") as f:\n    for zeile in f:\n        print(zeile.strip())\n\nHallo Anna\nGuten Morgen Ben\nWillkommen Carla",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html#in-eine-datei-schreiben",
+    "href": "skript/lesen_schreiben.html#in-eine-datei-schreiben",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.4 In eine Datei schreiben",
+    "text": "6.4 In eine Datei schreiben\n\nwith open(\"ausgabe.txt\", \"w\") as datei:\n    datei.write(\"Das ist eine neue Zeile.\\n\")\n    datei.write(\"Und noch eine.\")\n\n\n\"w\" steht für write (schreiben).\nAchtung: Eine vorhandene Datei wird überschrieben!",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html#zeilenweise-schreiben-mit-schleife",
+    "href": "skript/lesen_schreiben.html#zeilenweise-schreiben-mit-schleife",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.5 Zeilenweise schreiben mit Schleife",
+    "text": "6.5 Zeilenweise schreiben mit Schleife\n\ndaten = [\"Apfel\", \"Banane\", \"Kirsche\"]\n\nwith open(\"obst.txt\", \"w\") as f:\n    for eintrag in daten:\n        f.write(eintrag + \"\\n\")\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nJede Zeile endet mit \\n für einen Zeilenumbruch.\n\n\n\n\n\n\n\n\n\nAufgabe: Liste in Datei schreiben\n\n\n\n\n\nGegeben ist eine Liste von Städten:\nstaedte = [\"Berlin\", \"Hamburg\", \"München\"]\n\nSchreiben Sie ein Programm, das jede Stadt in eine neue Zeile einer Datei staedte.txt schreibt.\n\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nstaedte = [\"Berlin\", \"Hamburg\", \"München\"]\n\nwith open(\"staedte.txt\", \"w\") as f:\n    for stadt in staedte:\n        f.write(stadt + \"\\n\")",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html#alle-zeilen-auf-einmal-lesen-mit-readlines",
+    "href": "skript/lesen_schreiben.html#alle-zeilen-auf-einmal-lesen-mit-readlines",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.6 Alle Zeilen auf einmal lesen mit readlines()",
+    "text": "6.6 Alle Zeilen auf einmal lesen mit readlines()\nStatt über eine Datei zu iterieren, können Sie alle Zeilen auf einmal als Liste einlesen:\n\nwith open(\"01-daten/beispiel.txt\", \"r\") as f:\n    zeilen = f.readlines()\n    print(zeilen)\n\n['Dies ist ein Test.']\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nJede Zeile endet mit \\n, deshalb kann eine Nachbearbeitung mit .strip() sinnvoll sein:\n\nfor zeile in zeilen:\n    print(zeile.strip())\n\nDies ist ein Test.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html#dateien-manuell-schließen-mit-close",
+    "href": "skript/lesen_schreiben.html#dateien-manuell-schließen-mit-close",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.7 Dateien manuell schließen mit close()",
+    "text": "6.7 Dateien manuell schließen mit close()\nWenn Sie keinen with-Block verwenden, müssen Sie die Datei selbst schließen – sonst bleibt sie geöffnet:\n\ndatei = open(\"01-daten/beispiel.txt\", \"w\")\ndatei.write(\"Dies ist ein Test.\")\ndatei.close()\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nclose() ist wichtig, damit Änderungen gespeichert werden und die Datei nicht gesperrt bleibt.\nEmpfehlung: Nutzen Sie immer with open(...), da Python die Datei dann automatisch schließt – auch bei Fehlern.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  }
+]

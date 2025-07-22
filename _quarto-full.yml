@@ -1,0 +1,11 @@
+project:  
+  output-dir: output/book/
+book:
+  chapters:
+    - index.qmd
+    - skript/einleitung.qmd
+    - skript/datentypen.qmd
+    - skript/flusskontrolle.qmd
+    - skript/listen_iterationen.qmd
+    - skript/funktionen.qmd
+    - skript/lesen_schreiben.qmd

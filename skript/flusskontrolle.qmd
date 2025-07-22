@@ -1,0 +1,140 @@
+# Entscheidungen und Wiederholungen
+
+Programme müssen oft Entscheidungen treffen – zum Beispiel abhängig von einer Benutzereingabe oder einem bestimmten Wert. Ebenso müssen bestimmte Aktionen mehrfach durchgeführt werden.
+
+Dafür gibt es zwei zentrale Elemente in Python:
+
+- **Kontrollstrukturen**: `if`, `elif`, `else`
+- **Schleifen**: `while` und `for`
+
+## Lernziele dieses Kapitels
+
+Am Ende dieses Kapitels können Sie:
+
+- Bedingungen formulieren und mit `if`, `elif`, `else` nutzen,
+- Vergleichsoperatoren verwenden (`==`, `<`, `!=`, …),
+- Wiederholungen mit `while` und `for` umsetzen.
+
+## Bedingungen mit `if`, `elif`, `else`
+
+```{python}
+alter = 17
+
+if alter >= 18:
+    print("Sie sind volljährig.")
+else:
+    print("Sie sind minderjährig.")
+```
+
+Mehrere Fälle unterscheiden:
+
+```{python}
+note = 2.3
+
+if note <= 1.5:
+    print("Sehr gut")
+elif note <= 2.5:
+    print("Gut")
+elif note <= 3.5:
+    print("Befriedigend")
+else:
+    print("Ausreichend oder schlechter")
+```
+
+## Vergleichsoperatoren
+
+| Ausdruck | Bedeutung |
+|----------|-----------|
+| `a == b` | gleich |
+| `a != b` | ungleich |
+| `a < b`  | kleiner als |
+| `a > b`  | größer als |
+| `a <= b` | kleiner oder gleich |
+| `a >= b` | größer oder gleich |
+
+## Wiederholungen mit `while`
+
+```{python}
+zähler = 0
+
+while zähler < 5:
+    print("Zähler ist:", zähler)
+    zähler += 1
+```
+
+::: {.callout-important icon="false" collapse="false"}
+Achten Sie auf eine Abbruchbedingung – sonst läuft die Schleife endlos!
+:::
+
+## Schleifen mit `for` und `range()`
+
+Wenn Sie eine Schleife **genau eine bestimmte Anzahl von Malen** durchlaufen möchten, nutzen Sie `for` mit `range()`:
+
+```{python}
+for i in range(5):
+    print("Durchlauf:", i)
+```
+
+Start- und Endwert festlegen:
+
+```{python}
+for i in range(1, 6):
+    print(i)
+```
+
+## Was macht `range()` genau?
+
+Die Funktion `range()` erzeugt eine Abfolge von Zahlen, über die Sie mit einer `for`-Schleife iterieren können.
+
+### Varianten:
+
+```python
+range(5)
+```
+➡️ ergibt: `0, 1, 2, 3, 4` (startet bei 0, endet **vor** 5)
+
+```python
+range(2, 6)
+```
+➡️ ergibt: `2, 3, 4, 5` (startet bei 2, endet **vor** 6)
+
+```python
+range(1, 10, 2)
+```
+➡️ ergibt: `1, 3, 5, 7, 9` (Schrittweite = 2)
+
+`range()` erzeugt keine echte Liste, sondern ein sogenanntes „range-Objekt“, das wie eine Liste verwendet werden kann.
+
+::: {.callout-tip collapse="true"}
+## ✏️ Aufgabe: Zähle von 1 bis 10
+
+Nutzen Sie eine `for`-Schleife, um die Zahlen von 1 bis 10 auszugeben.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+for i in range(1, 11):
+    print(i)
+```
+:::
+:::
+
+::: {.callout-tip collapse="true"}
+## Aufgabe: Gerade Zahlen ausgeben
+
+Geben Sie alle geraden Zahlen von 0 bis 20 aus. Tipp: Eine Zahl ist gerade, wenn `zahl % 2 == 0`.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+for zahl in range(0, 21):
+    if zahl % 2 == 0:
+        print(zahl)
+```
+:::
+:::
+
+
+
+
+

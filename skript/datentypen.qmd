@@ -1,0 +1,179 @@
+# Datentypen verstehen
+
+## Lernziele dieses Kapitels
+
+Am Ende dieses Kapitels können Sie:
+
+- die wichtigsten Datentypen unterscheiden,
+- mit Zahlen und Texten rechnen bzw. arbeiten,
+- einfache Berechnungen und Ausgaben erstellen.
+
+## Einleitung
+
+In Python gibt es verschiedene **Datentypen**. Diese beschreiben, 
+**welche Art von Daten** Sie in Variablen speichern. Das ist wichtig, weil 
+viele Operationen – wie zum Beispiel `+` – je nach Datentyp etwas anderes bedeuten:
+
+- `+` bei Zahlen bedeutet **Addition**,
+- `+` bei Text bedeutet **Zusammenfügen** (Konkatenation).
+
+Bevor wir also mit komplexeren Programmen arbeiten, sollten wir verstehen, 
+welche Datentypen es gibt und wie man mit ihnen umgeht.
+
+## Die wichtigsten Datentypen
+
+Hier sind die grundlegenden Datentypen in Python:
+
+| Typ | Beispiel | Bedeutung |
+|-----|----------|-----------|
+| `int` | `10` | Ganze Zahl |
+| `float` | `3.14` | Kommazahl |
+| `str` | `"Hallo"` | Text (String) |
+| `bool` | `True`, `False` | Wahrheitswert (Ja/Nein) |
+
+Sie können den Typ einer Variable mit der Funktion `type()` herausfinden:
+
+```{python}
+wert = 42
+print(type(wert))  # Ausgabe: <class 'int'>
+```
+
+## Unterschiede zwischen `int` und `float`
+
+In Python unterscheidet man zwischen **ganzen Zahlen** (`int`) und **Kommazahlen** (`float`):
+
+- `int` steht für „integer“ – also ganze Zahlen wie `1`, `0`, `-10`
+- `float` steht für „floating point number“ – also Zahlen mit Dezimalstellen wie `3.14`, `0.5`, `-2.0`
+
+```{python}
+a = 10       # int
+b = 2.5      # float
+
+print("a:", a, "| Typ:", type(a))
+print("b:", b, "| Typ:", type(b))
+```
+
+::: {.callout-important icon="false" collapse="false"}
+Die Unterscheidung ist wichtig: Manche Rechenoperationen verhalten sich je nach Datentyp leicht unterschiedlich.
+:::
+
+## Was sind Booleans (`bool`)?
+
+Ein **Boolean** ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:
+
+- `True` (wahr)
+- `False` (falsch)
+
+Solche Werte begegnen uns zum Beispiel bei Fragen wie:
+
+- Ist die Temperatur über 30 °C?
+- Hat die Datei einen bestimmten Namen?
+- Ist die Liste leer?
+
+```{python}
+ist_sonnig = True
+hat_regenschirm = False
+
+print("Sonnig:", ist_sonnig)
+print("Regenschirm dabei?", hat_regenschirm)
+print("Typ von 'ist_sonnig':", type(ist_sonnig))
+```
+
+Booleans werden besonders in **Bedingungen** und **Vergleichen** verwendet, was Sie in Kapitel 4 genauer kennenlernen.
+
+## Rechnen mit Zahlen
+
+Python kann wie ein Taschenrechner verwendet werden:
+
+| Operator | Beschreibung |
+| :--: | :--: |
+| `+`, `-` |  Addition / Subtraktion |
+| `*`, `/` | Multiplikation / Division |
+| `//`, `%` | Ganzzahlige Division / Rest | 
+| `**`| Potenzieren |
+
+```{python}
+a = 10
+b = 3
+
+print("Addition:", a + b)
+print("Subtraktion:", a - b)
+print("Multiplikation:", a * b)
+print("Potenzieren", a**b)
+print("Division:", a / b)
+print("Ganzzahlige Division:", a // b)
+print("Division mit Rest:", a % b)
+```
+
+::: {.callout-note collapse="false"}
+`//` bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es 
+auch `%`. Hier wird eine Ganzzahldivision durchgeführt und der Rest ausgegeben.
+:::
+
+## Arbeiten mit Text
+
+Texte (Strings) können miteinander kombiniert werden:
+
+```{python}
+vorname = "Anna"
+nachname = "Beispiel"
+print("Willkommen, " + vorname + " " + nachname + "!")
+```
+
+Wenn Sie Text und Zahlen kombinieren wollen, müssen Sie die Zahl in einen String umwandeln:
+
+```{python}
+punkte = 95
+print("Sie haben " + str(punkte) + " Punkte erreicht.")
+```
+
+## Umwandlung von Datentypen (Typecasting)
+
+Manchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – 
+z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.
+
+Das nennt man **Typecasting**. Hier sind die wichtigsten Funktionen dafür:
+
+| Funktion | Beschreibung | Beispiel |
+|----------|--------------|----------|
+| `str())` | Zahl → Text | `str(42)` → `"42"` |
+| `int()` | Text/Zahl → ganze Zahl | `int("10")` → `10` |
+| `float()` | Text/Zahl → Kommazahl | `float("3.14")` → `3.14` |
+
+```{python}
+# Beispiel: Zahl als Text anzeigen
+punkte = 100
+print("Sie haben " + str(punkte) + " Punkte.")
+
+# Beispiel: String in Zahl umwandeln und berechnen
+eingabe = "3.5"
+wert = float(eingabe) * 2
+print("Doppelt so viel:", wert)
+```
+
+Achten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – 
+`int("abc")` führt zu einem Fehler.
+
+
+::: {.callout-tip collapse="true"}
+## Aufgabe: Alter in Tagen
+
+Berechnen Sie, wie alt eine Person in Tagen ist.
+
+```{python}
+alter_jahre = 32
+tage = alter_jahre * 365
+print("Sie sind ungefähr " + str(tage) + " Tage alt.")
+```
+
+Tipp: Denken Sie an die Umwandlung in einen String, wenn Sie die Zahl ausgeben möchten.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+alter = 32
+tage = alter * 365
+print("Sie sind ungefähr " + str(tage) + " Tage alt.")
+```
+:::
+:::

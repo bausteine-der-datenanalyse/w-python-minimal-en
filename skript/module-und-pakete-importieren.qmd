@@ -1,0 +1,93 @@
+# Module und Pakete importieren
+Der Funktionsumfang von Python kann erheblich durch das Importieren von Modulen und Paketen erweitert werden. Module und Pakete sind Bibliotheken, die Funktionsdefinitionen enthalten.
+
+:::{#imp-module-und-pakete .callout-important}
+# Module und Pakete
+
+Module
+: Module sind Dateien, die Funktionsdefinitionen enthalten.
+: Module werden durch das Schlüsselwort `import` und ihren Namen importiert, bspw. `import glob`
+
+Pakete
+: Pakete sind Sammlungen von Modulen
+: In Paketen enthaltene Module werden durch das Schlüsselwort `import` mit der Schreibeweise paket.modul importiert, bspw. `import matplotlib.pyplot`
+
+:::
+
+Module und Pakete werden mit dem Schlüsselwort `import` in Python geladen.
+Beispielsweise kann das für die Erzeugung (pseudo-)zufälliger Zahlen zuständige Modul random mit dem Befehl `import random` eingebunden werden. Anschließend stehen die Funktionen des Moduls unter dem Modulnamen in der Schreibweise `modul.funktion()` zur Verfügung.
+
+```{python}
+import random
+
+print(random.randint(1, 10)) # Zufällige Ganzzahl zwischen 1 und 10
+```
+
+Das Paket Matplotlib bringt viele Funktionen zur grafischen Darstellung von Daten mit. Das Modul `matplotlib.pyplot` stellt eine Schnittstelle zu den enthaltenen Funktionen dar.
+
+```{python}
+#| fig-cap: Grafik mit dem Modul pyplot aus dem Paket matplotlib
+#| fig-alt: "Darstellung von zehn Zufallszahlen ohne inhaltliche Bedeutung"
+
+import matplotlib.pyplot
+
+zufallsdaten = [] # leere Liste anlegen
+for i in range(10):
+    zufallszahl = random.randint(1, 10)
+    zufallsdaten.append(zufallszahl)
+
+matplotlib.pyplot.plot(zufallsdaten)
+```
+
+&nbsp;
+
+:::{#wrn-fromimport .callout-warning appearance="simple"}
+# Namensraum direkt einbinden
+In Python ist es auch möglich, Funktionen direkt in den Namensraum von Python zu importieren, sodass diese ohne die Schreibweise `modul.funktion()` aufgerufen werden können. Dies ist mit dem Schlüsselwort `from` möglich.
+
+```{python}
+from random import randint
+print(f"Die Funktion randint steht nun direkt zur Verfügung: {randint(1, 100)}")
+```
+
+Durch `from modulname import *` ist es sogar möglich, alle Funktionen aus einem Modul in den Namensraum von Python zu importieren. Im Allgemeinen sollte das direkte Importieren von Funktionen oder eines ganzen Moduls in den Namensraum von Python jedoch unterlassen werden. Einerseits wird damit eine Namensraumkollision riskiert, beispielsweise gibt es die Funktion `sum()` in der Pythonbasis, in NumPy und in Pandas. Andererseits wird der Programmcode dadurch weniger nachvollziehbar, da nicht mehr überall ersichtlich ist, aus welchem Modul eine verwendete Funktion stammt.
+:::
+
+## import as
+Um lange Modulnamen zu vereinfachen, kann beim Importieren das Schlüsselwort `as` verwendet werden, um dem Modul einen neuen Namen zuzuweisen.
+
+```{python}
+#| fig-cap: Grafik mit dem Modul pyplot aus dem Paket matplotlib
+#| fig-alt: "Darstellung von zehn Zufallszahlen ohne inhaltliche Bedeutung"
+
+import matplotlib.pyplot as plt
+
+plt.plot(zufallsdaten)
+```
+
+&nbsp;
+
+Für häufig verwendete Module haben sich bestimmte Kürzel etabliert. In den Bausteinen werden häufig die folgenden Pakete und Kürzel genutzt:
+
+| Modul | Kürzel | Befehl |
+|---|---|---|
+| NumPy | np | import numpy as np |
+| Pandas | pd | import pandas as pd |
+| matplotlib.pyplot | plt | import matplotlib.pyplot as plt |
+
+## Kleine Modulübersicht
+Da es nicht möglich ist, auf alle diese Module einzugehen, werden im folgenden nur einige wenige Module aufgelistet, welche für die Zielgruppe dieses Skripts interessant sein könnten. *Hinweis: Die Eigennamen einiger Module weisen eine Groß- und Kleinschreibung auf, bspw. das Modul NumPy. Beim Importieren der Module werden die Modulnamen jedoch klein geschrieben.* In der folgenden Liste wird auf die Groß- und Kleinschreibung daher verzichtet.
+
+* **math**: mathematische Funktionen und Konstanten
+* **scipy**: wissenschaftliche Funktionen
+* **sys**: Interaktion mit dem Python-Interpreter
+* **os**: Interaktion mit dem Betriebssystem
+* **glob**: Durchsuchen von Dateisystempfaden
+* **multiprocessing / threading**: Parallelprogramierung mit Prozessen / Threads
+* **matplotlib**: Visualisierung von Daten und Erstellen von Abbildungen
+* **numpy**: numerische Operationen und Funktionen
+* **pandas**: Daten einlesen und auswerten 
+* **time**: Zeitfunktionen
+
+&nbsp;
+(@Arnold-2023-funktionen-module-dateien)

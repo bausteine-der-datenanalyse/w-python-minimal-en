@@ -1,93 +1,98 @@
-# Module und Pakete importieren
-Der Funktionsumfang von Python kann erheblich durch das Importieren von Modulen und Paketen erweitert werden. Module und Pakete sind Bibliotheken, die Funktionsdefinitionen enthalten.
+# Importing Modules and Packages
+Python’s functionality can be greatly extended by importing modules and packages. Modules and packages are libraries that contain function definitions.
 
 :::{#imp-module-und-pakete .callout-important}
-# Module und Pakete
+# Modules and Packages
 
-Module
-: Module sind Dateien, die Funktionsdefinitionen enthalten.
-: Module werden durch das Schlüsselwort `import` und ihren Namen importiert, bspw. `import glob`
+Modules
+: Modules are files that contain function definitions.
+: Modules are imported using the `import` keyword and their name, e.g., `import glob`
 
-Pakete
-: Pakete sind Sammlungen von Modulen
-: In Paketen enthaltene Module werden durch das Schlüsselwort `import` mit der Schreibeweise paket.modul importiert, bspw. `import matplotlib.pyplot`
-
+Packages
+: Packages are collections of modules.
+: Modules within packages are imported using the syntax `package.module` with the `import` keyword, e.g., `import matplotlib.pyplot`
 :::
 
-Module und Pakete werden mit dem Schlüsselwort `import` in Python geladen.
-Beispielsweise kann das für die Erzeugung (pseudo-)zufälliger Zahlen zuständige Modul random mit dem Befehl `import random` eingebunden werden. Anschließend stehen die Funktionen des Moduls unter dem Modulnamen in der Schreibweise `modul.funktion()` zur Verfügung.
+Modules and packages are loaded in Python using the `import` keyword.  
+For example, the module `random`, responsible for generating (pseudo-)random numbers, can be imported using `import random`.  
+The module’s functions can then be accessed using the syntax `module.function()`.
 
 ```{python}
 import random
 
-print(random.randint(1, 10)) # Zufällige Ganzzahl zwischen 1 und 10
+print(random.randint(1, 10))  # Random integer between 1 and 10
 ```
 
-Das Paket Matplotlib bringt viele Funktionen zur grafischen Darstellung von Daten mit. Das Modul `matplotlib.pyplot` stellt eine Schnittstelle zu den enthaltenen Funktionen dar.
+The package Matplotlib provides many functions for visualizing data.  
+The module `matplotlib.pyplot` serves as an interface to these functions.
 
 ```{python}
-#| fig-cap: Grafik mit dem Modul pyplot aus dem Paket matplotlib
-#| fig-alt: "Darstellung von zehn Zufallszahlen ohne inhaltliche Bedeutung"
+#| fig-cap: Graphic using the pyplot module from the matplotlib package
+#| fig-alt: "Display of ten random numbers without any meaningful context"
 
 import matplotlib.pyplot
 
-zufallsdaten = [] # leere Liste anlegen
+random_data = []  # create an empty list
 for i in range(10):
-    zufallszahl = random.randint(1, 10)
-    zufallsdaten.append(zufallszahl)
+    rand_num = random.randint(1, 10)
+    random_data.append(rand_num)
 
-matplotlib.pyplot.plot(zufallsdaten)
+matplotlib.pyplot.plot(random_data)
 ```
 
 &nbsp;
 
 :::{#wrn-fromimport .callout-warning appearance="simple"}
-# Namensraum direkt einbinden
-In Python ist es auch möglich, Funktionen direkt in den Namensraum von Python zu importieren, sodass diese ohne die Schreibweise `modul.funktion()` aufgerufen werden können. Dies ist mit dem Schlüsselwort `from` möglich.
+# Importing into the Namespace
+In Python, it is also possible to import functions directly into the namespace, so they can be used without the `module.function()` syntax. This is done with the `from` keyword.
 
 ```{python}
 from random import randint
-print(f"Die Funktion randint steht nun direkt zur Verfügung: {randint(1, 100)}")
+print(f"The function randint is now directly available: {randint(1, 100)}")
 ```
 
-Durch `from modulname import *` ist es sogar möglich, alle Funktionen aus einem Modul in den Namensraum von Python zu importieren. Im Allgemeinen sollte das direkte Importieren von Funktionen oder eines ganzen Moduls in den Namensraum von Python jedoch unterlassen werden. Einerseits wird damit eine Namensraumkollision riskiert, beispielsweise gibt es die Funktion `sum()` in der Pythonbasis, in NumPy und in Pandas. Andererseits wird der Programmcode dadurch weniger nachvollziehbar, da nicht mehr überall ersichtlich ist, aus welchem Modul eine verwendete Funktion stammt.
+Using `from modulename import *` even allows importing all functions from a module into the namespace.  
+However, this practice is generally discouraged:  
+It can lead to name collisions — for example, the `sum()` function exists in Python, NumPy, and Pandas.  
+Also, it reduces code readability, as it’s no longer clear which module a function belongs to.
 :::
 
 ## import as
-Um lange Modulnamen zu vereinfachen, kann beim Importieren das Schlüsselwort `as` verwendet werden, um dem Modul einen neuen Namen zuzuweisen.
+To shorten long module names, the `as` keyword can be used to assign an alias when importing.
 
 ```{python}
-#| fig-cap: Grafik mit dem Modul pyplot aus dem Paket matplotlib
-#| fig-alt: "Darstellung von zehn Zufallszahlen ohne inhaltliche Bedeutung"
+#| fig-cap: Graphic using the pyplot module from the matplotlib package
+#| fig-alt: "Display of ten random numbers without any meaningful context"
 
 import matplotlib.pyplot as plt
 
-plt.plot(zufallsdaten)
+plt.plot(random_data)
 ```
 
 &nbsp;
 
-Für häufig verwendete Module haben sich bestimmte Kürzel etabliert. In den Bausteinen werden häufig die folgenden Pakete und Kürzel genutzt:
+Certain abbreviations have become common for frequently used modules. The following are regularly used in this material:
 
-| Modul | Kürzel | Befehl |
-|---|---|---|
+| Module | Abbreviation | Command |
+|--------|--------------|---------|
 | NumPy | np | import numpy as np |
 | Pandas | pd | import pandas as pd |
 | matplotlib.pyplot | plt | import matplotlib.pyplot as plt |
 
-## Kleine Modulübersicht
-Da es nicht möglich ist, auf alle diese Module einzugehen, werden im folgenden nur einige wenige Module aufgelistet, welche für die Zielgruppe dieses Skripts interessant sein könnten. *Hinweis: Die Eigennamen einiger Module weisen eine Groß- und Kleinschreibung auf, bspw. das Modul NumPy. Beim Importieren der Module werden die Modulnamen jedoch klein geschrieben.* In der folgenden Liste wird auf die Groß- und Kleinschreibung daher verzichtet.
+## Brief Module Overview
+Since it’s not feasible to cover all modules, here’s a brief list of some that may be relevant to the target audience.  
+*Note: Some module names are capitalized (e.g., NumPy), but they are always lowercase when imported.*
 
-* **math**: mathematische Funktionen und Konstanten
-* **scipy**: wissenschaftliche Funktionen
-* **sys**: Interaktion mit dem Python-Interpreter
-* **os**: Interaktion mit dem Betriebssystem
-* **glob**: Durchsuchen von Dateisystempfaden
-* **multiprocessing / threading**: Parallelprogramierung mit Prozessen / Threads
-* **matplotlib**: Visualisierung von Daten und Erstellen von Abbildungen
-* **numpy**: numerische Operationen und Funktionen
-* **pandas**: Daten einlesen und auswerten 
-* **time**: Zeitfunktionen
+* **math**: mathematical functions and constants  
+* **scipy**: scientific functions  
+* **sys**: interact with the Python interpreter  
+* **os**: interact with the operating system  
+* **glob**: search filesystem paths  
+* **multiprocessing / threading**: parallel programming with processes / threads  
+* **matplotlib**: data visualization and plot creation  
+* **numpy**: numerical operations and functions  
+* **pandas**: data reading and analysis  
+* **time**: time-related functions  
 
-&nbsp;
+&nbsp;  
 (@Arnold-2023-funktionen-module-dateien)

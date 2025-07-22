@@ -1,160 +1,158 @@
-# Wiederverwendbarer Code mit Funktionen
+# Reusable Code with Functions
 
-Stellen Sie sich vor, Sie müssen eine bestimmte Berechnung mehrfach im Programm durchführen. Anstatt den Code jedes Mal neu zu schreiben, können Sie ihn in einer **Funktion** bündeln.
+Imagine you need to perform a specific calculation multiple times in your program. Instead of writing the same code repeatedly, you can bundle it into a **function**.
 
-Funktionen sind ein zentrales Werkzeug, um Code:
+Functions are a key tool to make code:
 
-- übersichtlich,
-- wiederverwendbar und
-- testbar zu machen.
+- clear,
+- reusable, and
+- testable.
 
-## Lernziele dieses Kapitels
+## Learning Goals of This Chapter
 
-Am Ende dieses Kapitels können Sie:
+By the end of this chapter, you will be able to:
 
-- eigene Funktionen mit `def` erstellen,
-- Parameter übergeben und Rückgabewerte nutzen,
-- Funktionen sinnvoll in Programmen einsetzen.
+- create your own functions using `def`,
+- pass parameters and use return values,
+- apply functions effectively in programs.
 
-## Eine Funktion definieren
+## Defining a Function
 
-Eine Funktion besteht aus folgenden Teilen:
+A function consists of the following parts:
 
-1. **Definition** mit `def`
-2. **Funktionsname**
-3. **Parameter in Klammern (optional)**
-4. **Einrückung** für den Funktionskörper
-5. (optional) **`return`-Anweisung**
+1. **Definition** with `def`
+2. **Function name**
+3. **Parameters in parentheses (optional)**
+4. **Indentation** for the function body
+5. (optional) **`return` statement**
 
-Beispiel:
+Example:
 
 ```{python}
-def hallo(name="Gast"):
-    begruessung = "Hallo " + name + "!"
-    return begruessung
+def hello(name="Guest"):
+    greeting = "Hello " + name + "!"
+    return greeting
 ```
 
-
-Fangen wir mit dem ersten Stichwort an. Funktionen werden mit `def` definiert 
-und können beliebig oft aufgerufen werden:
+Let’s start with the first keyword. Functions are defined with `def` 
+and can be called as often as you like:
 
 ```{python}
-def begruessung():
-    print("Hallo und willkommen!")
+def greeting():
+    print("Hello and welcome!")
 ```
 
-Sie wird erst ausgeführt, wenn Sie sie aufrufen:
+It only runs when you call it:
 
 ```{python}
-begruessung()
+greeting()
 ```
 
-## Parameter übergeben
+## Passing Parameters
 
-Funktionen können Eingabewerte (Parameter) erhalten:
+Functions can receive input values (parameters):
 
 ```{python}
-def begruessung(name):
-    print("Hallo", name + "!")
+def greeting(name):
+    print("Hello", name + "!")
 
-begruessung("Alex")
+greeting("Alex")
 ```
 
-## Rückgabewerte mit `return`
+## Return Values with `return`
 
-Eine Funktion kann auch einen Wert **zurückgeben**:
+A function can also **return** a value:
 
 ```{python}
-def quadrat(zahl):
-    return zahl * zahl
+def square(number):
+    return number * number
 
-ergebnis = quadrat(5)
-print(ergebnis)
+result = square(5)
+print(result)
 ```
 
-## Beispiel: Umrechnungen
+## Example: Conversions
 
-### Euro zu US-Dollar
+### Euro to US Dollar
 
 ```{python}
-def euro_zu_usd(betrag_euro):
-    wechselkurs = 1.09
-    return betrag_euro * wechselkurs
+def euro_to_usd(amount_euro):
+    exchange_rate = 1.09
+    return amount_euro * exchange_rate
 
-print("20 € sind", euro_zu_usd(20), "US-Dollar.")
+print("20 € is", euro_to_usd(20), "US dollars.")
 ```
 
 ::: {.callout-tip collapse="true"}
-## Aufgabe: Begrüßung mit Name
+## Task: Greeting with Name
 
-Erstellen Sie eine Funktion `begruesse(name)`, die den Namen in einem Begrüßungstext verwendet:
+Create a function `greet(name)` that uses the name in a greeting text:
 
 ```text
-Hallo Fatima, schön dich zu sehen!
+Hello Fatima, nice to see you!
 ```
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
-def begruesse(name):
-    print("Hallo", name + ", schön dich zu sehen!")
+def greet(name):
+    print("Hello", name + ", nice to see you!")
 
-begruesse("Fatima")
+greet("Fatima")
 ```
 :::
 :::
 
 ::: {.callout-tip collapse="true"}
-## Aufgabe: Temperaturumrechnung
+## Task: Temperature Conversion
 
-Schreiben Sie eine Funktion, die Celsius in Fahrenheit umrechnet:
+Write a function that converts Celsius to Fahrenheit:
 
-Formel:
+Formula:
 \[
 F = C \times 1.8 + 32
 \]
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
-def celsius_zu_fahrenheit(c):
+def celsius_to_fahrenheit(c):
     return c * 1.8 + 32
 
-print(celsius_zu_fahrenheit(20))
+print(celsius_to_fahrenheit(20))
 ```
 :::
 :::
 
-## Parameter mit Standardwerten
+## Parameters with Default Values
 
-Sie können Parametern **Standardwerte** zuweisen. So kann die Funktion auch ohne 
-Angabe eines Werts aufgerufen werden:
+You can assign **default values** to parameters. That way, the function can be called even without providing a value:
 
 ```{python}
-def begruessung(name="Gast"):
-    print("Hallo", name + "!")
+def greeting(name="Guest"):
+    print("Hello", name + "!")
 
-begruessung()         # Hallo Gast!
-begruessung("Maria")  # Hallo Maria!
+greeting()         # Hello Guest!
+greeting("Maria")  # Hello Maria!
 ```
 
 ::: {.callout-note collapse="false"}
 ## `print()` vs. `return`
 
-Diese beiden Begriffe werden oft verwechselt:
+These two concepts are often confused:
 
-| Ausdruck | Bedeutung |
-|----------|-----------|
-| `print()` | zeigt einen Text auf dem Bildschirm |
-| `return ` | gibt einen Wert an den Aufrufer zurück |
+| Expression | Meaning |
+|------------|---------|
+| `print()`  | displays text on the screen |
+| `return`   | gives a value back to the caller |
 
-Beispiel:
+Example:
 
 ```{python}
-def verdoppeln(x):
+def double(x):
     return x * 2
 
-# Ausgabe sichtbar machen
-print(verdoppeln(5))  # Ausgabe: 10
+# Make the output visible
+print(double(5))  # Output: 10
 ```
 :::

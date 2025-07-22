@@ -1,51 +1,51 @@
-# Arbeiten mit Dateien
+# Working with Files
 
-Programme arbeiten oft nicht nur mit Benutzereingaben, sondern auch mit **Textdateien** – zum Beispiel um Daten zu speichern oder zu laden.
+Programs often work not only with user input but also with **text files** – for example, to save or load data.
 
-Python bietet einfache Funktionen, um:
+Python offers simple functions to:
 
-- Dateien **zu öffnen**,
-- ihren **Inhalt zu lesen** oder **hineinzuschreiben**,
-- und die Datei **wieder zu schließen**.
+- **open** files,
+- **read from** or **write to** them,
+- and **close** them afterward.
 
-## Lernziele dieses Kapitels
+## Learning Goals of This Chapter
 
-Am Ende dieses Kapitels können Sie:
+By the end of this chapter, you will be able to:
 
-- Dateien mit `open()` öffnen,
-- Inhalte aus Textdateien einlesen,
-- Texte in Dateien schreiben,
-- mit `with`-Blöcken sicher und einfach arbeiten.
+- open files using `open()`,
+- read content from text files,
+- write text into files,
+- work safely and easily using `with` blocks.
 
-## Eine Datei einlesen
+## Reading a File
 
 ```{python}
-# Beispiel: Datei lesen
-with open("01-daten/beispiel.txt", "r") as datei:
-    inhalt = datei.read()
-    print(inhalt)
+# Example: Reading a file
+with open("01-daten/beispiel.txt", "r") as file:
+    content = file.read()
+    print(content)
 ```
 
-- `"r"` steht für **read** (lesen).
-- `with` sorgt dafür, dass die Datei nach dem Lesen automatisch geschlossen wird.
-- `read()` liest den **gesamten Inhalt** der Datei als String.
+- `"r"` stands for **read**.
+- `with` ensures that the file is automatically closed after reading.
+- `read()` reads the **entire content** of the file as a string.
 
-## Zeilenweise lesen
+## Reading Line by Line
 
 ```{python}
-with open("01-daten/beispiel.txt", "r") as datei:
-    for zeile in datei:
-        print("Zeile:", zeile.strip())
+with open("01-daten/beispiel.txt", "r") as file:
+    for line in file:
+        print("Line:", line.strip())
 ```
 
 ::: {.callout-note collapse="false"}
-`.strip()` entfernt Leerzeichen und Zeilenumbrüche am Anfang und Ende.
+`.strip()` removes whitespace and line breaks at the beginning and end.
 :::
 
 ::: {.callout-tip collapse="true"}
-## Aufgabe: Datei lesen
+## Task: Read a File
 
-Angenommen, es gibt eine Datei `gruesse.txt` mit folgendem Inhalt:
+Suppose there is a file `gruesse.txt` with the following content:
 
 ```
 Hallo Anna
@@ -53,111 +53,98 @@ Guten Morgen Ben
 Willkommen Carla
 ```
 
-Schreiben Sie ein Programm, das jede Zeile einzeln einliest und mit `print(...)` wiedergibt.
+Write a program that reads each line one by one and outputs it using `print(...)`.
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
 with open("01-daten/gruesse.txt", "r") as f:
-    for zeile in f:
-        print(zeile.strip())
+    for line in f:
+        print(line.strip())
 ```
 :::
 :::
 
-## Alle Zeilen auf einmal lesen mit `readlines()`
-
-Statt über eine Datei zu iterieren, können Sie alle Zeilen auf einmal als Liste einlesen:
+## Writing to a File
 
 ```{python}
-with open("01-daten/beispiel.txt", "r") as f:
-    zeilen = f.readlines()
-    print(zeilen)
+with open("ausgabe.txt", "w") as file:
+    file.write("This is a new line.\n")
+    file.write("And another one.")
 ```
 
-::: {.callout-important collapse="false"}
-Oftmals bestehen die eingelesenen Zeilen aus Werten, die durch ein spezifisches 
-Trennzeichen z.B. ",". Um diese Zeilen dann in die einzelnen Werte zu trennen, 
-benutzen wir die `.split()`-Funktion.
+- `"w"` stands for **write**.
+- Caution: An existing file will be **overwritten**!
+
+## Writing Line by Line Using a Loop
 
 ```{python}
-zeile = "319,12,14,190,342"
-print(zeile.split(","))
-```
-
-Jede Zeile endet mit `\n`, deshalb kann eine Nachbearbeitung mit `.strip()` sinnvoll sein:
-
-```{python}
-for zeile in zeilen:
-    print(zeile.strip())
-```
-:::
-
-## In eine Datei schreiben
-
-```{python}
-with open("ausgabe.txt", "w") as datei:
-    datei.write("Das ist eine neue Zeile.\n")
-    datei.write("Und noch eine.")
-```
-
-- `"w"` steht für **write** (schreiben).
-- Achtung: Eine vorhandene Datei wird **überschrieben**!
-
-## Zeilenweise schreiben mit Schleife
-
-```{python}
-daten = ["Apfel", "Banane", "Kirsche"]
+data = ["Apple", "Banana", "Cherry"]
 
 with open("obst.txt", "w") as f:
-    for eintrag in daten:
-        f.write(eintrag + "\n")
+    for entry in data:
+        f.write(entry + "\n")
 ```
 
 ::: {.callout-important collapse="false"}
-Jede Zeile endet mit `\n` für einen Zeilenumbruch.
+Each line ends with `\n` for a line break.
 :::
 
 ::: {.callout-tip collapse="true"}
-## Aufgabe: Liste in Datei schreiben
+## Task: Write a List to a File
 
-Gegeben ist eine Liste von Städten:
+Given a list of cities:
 
 ```python
-staedte = ["Berlin", "Hamburg", "München"]
+cities = ["Berlin", "Hamburg", "Munich"]
 ```
 
-- Schreiben Sie ein Programm, das jede Stadt in eine neue Zeile einer Datei `staedte.txt` schreibt.
+- Write a program that writes each city to a new line in a file called `cities.txt`.
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
-staedte = ["Berlin", "Hamburg", "München"]
+cities = ["Berlin", "Hamburg", "Munich"]
 
-with open("staedte.txt", "w") as f:
-    for stadt in staedte:
-        f.write(stadt + "\n")
+with open("cities.txt", "w") as f:
+    for city in cities:
+        f.write(city + "\n")
 ```
 :::
 :::
 
-## Dateien manuell schließen mit `close()`
+## Reading All Lines at Once with `readlines()`
 
-Wenn Sie **keinen `with`-Block** verwenden, müssen Sie die Datei selbst schließen 
-– sonst bleibt sie geöffnet:
+Instead of iterating over a file, you can read all lines at once as a list:
 
 ```{python}
-datei = open("01-daten/beispiel.txt", "w")
-datei.write("Dies ist ein Test.")
-datei.close()
+with open("01-daten/beispiel.txt", "r") as f:
+    lines = f.readlines()
+    print(lines)
 ```
 
 ::: {.callout-important collapse="false"}
-`close()` ist wichtig, damit Änderungen gespeichert werden und die Datei nicht 
-gesperrt bleibt.
+Each line ends with `\n`, so post-processing with `.strip()` is often helpful:
 
-**Empfehlung**: Nutzen Sie immer `with open(...)`, da Python die Datei dann 
-automatisch schließt – auch bei Fehlern.
+```{python}
+for line in lines:
+    print(line.strip())
+```
 :::
 
+## Closing Files Manually with `close()`
 
+If you **do not use a `with` block**, you must close the file yourself –
+otherwise it stays open:
+
+```{python}
+file = open("01-daten/beispiel.txt", "w")
+file.write("This is a test.")
+file.close()
+```
+
+::: {.callout-important collapse="false"}
+`close()` is important to ensure changes are saved and the file is not locked.
+
+**Recommendation**: Always use `with open(...)`, because Python will automatically close the file – even if an error occurs.
+:::

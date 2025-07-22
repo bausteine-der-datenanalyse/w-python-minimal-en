@@ -1,147 +1,145 @@
-# Mehrere Werte speichern
+# Storing Multiple Values
 
-Bisher haben Sie einzelne Werte in Variablen gespeichert. Doch was, wenn Sie eine ganze Reihe von Zahlen, Namen oder Werten auf einmal speichern möchten?
+Until now, you've stored individual values in variables. But what if you want to store a whole list of numbers, names, or values at once?
 
-Dafür gibt es in Python **Listen**. In diesem Kapitel lernen Sie außerdem, wie man mit `for`-Schleifen über Listen iteriert.
+For that, Python has **lists**. In this chapter, you'll also learn how to iterate over lists using `for` loops.
 
-## Was ist eine Liste?
+## What is a List?
 
-Eine Liste ist eine geordnete Sammlung von Werten eines Datentyps.
+A list is an ordered collection of values of the same data type.
 
 ```{python}
-namen = ["Ali", "Bente", "Carlos"]
-noten = [1.7, 2.3, 1.3, 2.0]
+names = ["Ali", "Bente", "Carlos"]
+grades = [1.7, 2.3, 1.3, 2.0]
 ```
 
-Auf Elemente greifen Sie mit eckigen Klammern zu:
+You access elements using square brackets:
 
 ```{python}
-print(namen[0])  # erstes Element
-print(noten[-1]) # letztes Element
+print(names[0])   # first element
+print(grades[-1]) # last element
 ```
 
-## Teile aus Listen ausschneiden – Slicing
+## Slicing Lists
 
-Mit dem sogenannten **Slicing** können Sie gezielt Ausschnitte aus einer Liste entnehmen. 
-Dabei geben Sie an, **wo der Ausschnitt beginnt und wo er endet** (der Endwert 
-wird **nicht** mehr mitgenommen):
+With **slicing**, you can extract specific parts of a list.
+You specify **where the slice starts and where it ends** (the end value is **not** included):
 
 ```{python}
-zahlen = [10, 20, 30, 40, 50, 60]
-print(zahlen[1:4])  # Ausgabe: [20, 30, 40]
+numbers = [10, 20, 30, 40, 50, 60]
+print(numbers[1:4])  # Output: [20, 30, 40]
 ```
 
-### Syntax: `liste[start:stop]`
+### Syntax: `list[start:stop]`
 
-- **start**: Index, bei dem das Slicing beginnt (inklusive)
-- **stop**: Index, an dem es endet (exklusive)
-- Der Startwert kann auch weggelassen werden: `[:3]` → erstes bis drittes Element
-- Ebenso der Endwert: `[3:]` → ab dem vierten Element bis zum Ende
-- Ganze Kopie: `[:]`
+- **start**: index where slicing starts (inclusive)
+- **stop**: index where it ends (exclusive)
+- You can omit the start index: `[:3]` → first to third element
+- Or omit the stop index: `[3:]` → from fourth element to end
+- Full copy: `[:]`
 
 ```{python}
-print(zahlen[:3])   # [10, 20, 30]
-print(zahlen[3:])   # [40, 50, 60]
-print(zahlen[:])    # vollständige Kopie
+print(numbers[:3])   # [10, 20, 30]
+print(numbers[3:])   # [40, 50, 60]
+print(numbers[:])    # full copy
 ```
 
 ::: {.callout-note icon="false" collapse="false"}
-Sie können auch mit negativen Indizes arbeiten (`-1` ist das letzte Element):
+You can also use negative indices (`-1` is the last element):
 ```{python}
-print(zahlen[-3:])  # [40, 50, 60]
+print(numbers[-3:])  # [40, 50, 60]
 ```
 :::
 
-## Über Listen iterieren
+## Iterating Over Lists
 
-Mit einer `for`-Schleife können Sie über jedes Element in einer Liste iterieren:
+You can use a `for` loop to iterate over each element in a list:
 
 ```{python}
-namen = ["Ali", "Bente", "Carlos"]
+names = ["Ali", "Bente", "Carlos"]
 
-for name in namen:
-    print("Hallo", name + "!")
+for name in names:
+    print("Hello", name + "!")
 ```
 
-## Erweiterung: Bedingte Ausgaben
+## Extension: Conditional Output
 
-Sie können in der Schleife mit `if` filtern:
+You can use `if` statements inside the loop to filter:
 
 ```{python}
-temperaturen = [14.2, 17.5, 19.0, 21.3, 18.4]
+temperatures = [14.2, 17.5, 19.0, 21.3, 18.4]
 
-for t in temperaturen:
+for t in temperatures:
     if t > 18:
-        print(t, "ist ein warmer Tag")
+        print(t, "is a warm day")
 ```
 
-## Durchschnitt berechnen
+## Calculating the Average
 
-Python stellt nützliche Funktionen bereit, z. B. `sum()` und `len()`:
+Python provides useful functions such as `sum()` and `len()`:
 
 ```{python}
-noten = [1.7, 2.3, 1.3, 2.0]
+grades = [1.7, 2.3, 1.3, 2.0]
 
-durchschnitt = sum(noten) / len(noten)
-print("Durchschnittsnote:", round(durchschnitt, 2))
+average = sum(grades) / len(grades)
+print("Average grade:", round(average, 2))
 ```
 
-## Listen erweitern: `.append()`
+## Expanding Lists: `.append()`
 
-Manchmal kennen Sie die Listenelemente nicht vorher – dann können Sie neue Werte **nachträglich hinzufügen**:
+Sometimes you don’t know the list elements beforehand — you can **add new values later**:
 
 ```{python}
-namen = []
+names = []
 
-namen.append("Ali")
-namen.append("Bente")
+names.append("Ali")
+names.append("Bente")
 
-print(namen)
+print(names)
 ```
 
 ::: {.callout-note icon="false" collapse="false"}
-Die Methode `.append())` hängt einen neuen Wert an das Ende der Liste.
+The `.append()` method adds a new value to the end of the list.
 :::
 
-## Verschachtelte Schleifen
+## Nested Loops
 
-Wenn Sie mit **mehrdimensionalen Daten** arbeiten – z. B. eine Tabelle mit mehreren Zeilen – können Sie Schleifen **ineinander verschachteln**:
+If you're working with **multidimensional data** — such as a table with several rows — you can **nest loops**:
 
 ```{python}
-wochentage = ["Mo", "Di", "Mi"]
-stunden = [1, 2, 3]
+weekdays = ["Mon", "Tue", "Wed"]
+hours = [1, 2, 3]
 
-for tag in wochentage:
-    for stunde in stunden:
-        print(f"{tag}, Stunde {stunde}")
+for day in weekdays:
+    for hour in hours:
+        print(f"{day}, hour {hour}")
 ```
 
-Das ergibt:
+This results in:
 
 ```
-Mo, Stunde 1
-Mo, Stunde 2
-Mo, Stunde 3
-Di, Stunde 1
+Mon, hour 1
+Mon, hour 2
+Mon, hour 3
+Tue, hour 1
 ...
 ```
 
-## Listen sortieren
+## Sorting Lists
 
-Mit `sorted()` können Sie Listen **alphabetisch oder numerisch sortieren**:
+With `sorted()`, you can sort lists **alphabetically or numerically**:
 
 ```{python}
-namen = ["Zoe", "Anna", "Ben"]
-sortiert = sorted(namen)
+names = ["Zoe", "Anna", "Ben"]
+sorted_names = sorted(names)
 
-print(sortiert)
+print(sorted_names)
 ```
 
-
 ::: {.callout-important icon="false" collapse="false"}
-Die Original-Liste bleibt **unverändert**.  
-Wenn Sie die Liste direkt verändern möchten, geht das mit:
+The original list remains **unchanged**.  
+If you want to modify the list directly, you can use:
 ```{python}
-namen.sort()
+names.sort()
 ```
 :::

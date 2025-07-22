@@ -1,100 +1,94 @@
-# Einführung
+# Introduction
 
 ::: {.border}
-![Logo der Programmiersprache Python](00-bilder/python-logo-and-wordmark-cc0-tm.png)
+![Logo of the Python Programming Language](00-bilder/python-logo-and-wordmark-cc0-tm.png)
 
-Python Logo von Python Software Foundation steht unter der [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). Die Wort-Bild-Marke ist markenrechtlich geschützt: <https://www.python.org/psf/trademarks/>. Das Werk ist abrufbar auf [wikimedia](https://de.m.wikipedia.org/wiki/Datei:Python_logo_and_wordmark.svg). 2008
-::: 
+Python logo by the Python Software Foundation is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). The wordmark is a registered trademark: <https://www.python.org/psf/trademarks/>. The original can be found on [Wikimedia](https://de.m.wikipedia.org/wiki/Datei:Python_logo_and_wordmark.svg). 2008
+:::
 
-# Willkommen bei Python!
+# Welcome to Python!
 
-Python ist eine moderne Programmiersprache, die sich besonders gut für 
-Einsteigerinnen und Einsteiger eignet. Sie ist leicht verständlich und 
-wird in vielen Bereichen eingesetzt – von der Datenanalyse bis hin zur 
-Webentwicklung.
+Python is a modern programming language that is especially well-suited for beginners. 
+It is easy to understand and used in many fields – from data analysis to web development.
 
-> In diesem Kurs lernen Sie Python Schritt für Schritt anhand praktischer Beispiele.
+> In this course, you will learn Python step by step through practical examples.
 
-## Lernziele dieses Kapitels
+## Learning goals of this chapter
 
-Am Ende dieses Kapitels können Sie:
+By the end of this chapter, you will be able to:
+- write simple Python programs,
+- display text on the screen,
+- define and use basic variables.
 
-- einfache Python-Programme schreiben,
-- Text auf dem Bildschirm ausgeben,
-- erste Variablen definieren und verwenden.
+## Your first program
 
-## Ihr erstes Programm
-
-Die ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. 
-WIr lassen uns die Worte 'Hello World' ausgeben. Dazu nutzen wir den print-Befehl
- `print()`:
+The first steps in any new programming language are always the same. 
+We start by printing the words 'Hello World'. For this, we use the `print()` command:
 
 ```{python}
-print("Hallo Welt!")
+print("Hello World!")
 ```
 
+**What happens here?**
+- `print()` is a **function** that displays something on the screen.
+- The text `"Hello World!"` is shown.
+- Texts (also called “strings”) are always enclosed in quotation marks.
 
-**Was passiert hier?**
-- `print()` ist eine sogenannte **Funktion**, die etwas auf dem Bildschirm ausgibt.
-- Der Text `"Hello World!"` wird angezeigt.
-- Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.
+## Variables – Names for values
 
-## Variablen – Namen für Werte
-
-Variablen sind wie beschriftete Schubladen: Sie speichern Informationen unter einem Namen.
+Variables are like labeled drawers: they store information under a name.
 
 ```{python}
-name = "Frau Müller"
-alter = 32
+name = "Ms. Miller"
+age = 32
 ```
 
-Sie können diese Variablen verwenden, um dynamische Ausgaben zu erzeugen:
+You can use these variables to create dynamic output:
 
 ```{python}
-print(name + " ist " + str(alter) + " Jahre alt.")
+print(name + " is " + str(age) + " years old.")
 ```
 
-Zu beachten ist hier, dass sie versuchen sowohl eine Zahl, als auch Text auszugeben. Daher müssen wir mit der Funktion 'str()' die Zahl in Text umwandeln.
+Note that here you are trying to output both a number and text. Therefore, we use the `str()` function to convert the number into text.
 
 ::: {.callout-tip collapse="true"}
 
-## ✏️ Aufgabe: Begrüßung mit Alter
+## ✏️ Exercise: Greeting with age
 
-Schreiben Sie ein Programm, das Sie mit Ihrem Namen begrüßt:
+Write a program that greets you with your name:
 
 ```
-Hallo Frau Müller!
+Hello Ms. Miller!
 ```
 
-Tipp: In Python können Sie Texte mit `+` zusammenfügen. Denken Sie daran, dass 
-Strings in Anführungszeichen stehen müssen.
+Tip: In Python, you can concatenate text using `+`. Remember that 
+strings must be in quotation marks.
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
-mein_name = "Ihr Name hier"
-print("Hallo " + mein_name + "!")
+my_name = "Your name here"
+print("Hello " + my_name + "!")
 ```
 :::
 
-Erweitern Sie Ihr Programm so, dass es eine Begrüßung inklusive Alter ausgibt:
+Extend your program so that it greets you and also states your age:
 
 ```
-Hallo Frau Müller!
-Sie sind 32 Jahre alt.
+Hello Ms. Miller!
+You are 32 years old.
 ```
 
-Tipp: Verwenden Sie `print()` mehrmals oder fügen Sie Texte zusammen.
+Tip: Use multiple `print()` statements or concatenate the text.
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
-name = "Frau Müller"
-alter = 32
+name = "Ms. Miller"
+age = 32
 
-print("Hallo " + name + "!")
-print("Sie sind " + str(alter) + " Jahre alt.")
-
+print("Hello " + name + "!")
+print("You are " + str(age) + " years old.")
 ```
 :::
 

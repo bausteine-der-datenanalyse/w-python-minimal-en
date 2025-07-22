@@ -1,179 +1,175 @@
-# Datentypen verstehen
+# Understanding Data Types
 
-## Lernziele dieses Kapitels
+## Learning Objectives of This Chapter
 
-Am Ende dieses Kapitels können Sie:
+By the end of this chapter, you will be able to:
 
-- die wichtigsten Datentypen unterscheiden,
-- mit Zahlen und Texten rechnen bzw. arbeiten,
-- einfache Berechnungen und Ausgaben erstellen.
+- distinguish the most important data types,
+- work with numbers and text,
+- perform simple calculations and print outputs.
 
-## Einleitung
+## Introduction
 
-In Python gibt es verschiedene **Datentypen**. Diese beschreiben, 
-**welche Art von Daten** Sie in Variablen speichern. Das ist wichtig, weil 
-viele Operationen – wie zum Beispiel `+` – je nach Datentyp etwas anderes bedeuten:
+Python has various **data types**. These describe **what kind of data** you store in variables. This is important because many operations—like `+`—can behave differently depending on the data type:
 
-- `+` bei Zahlen bedeutet **Addition**,
-- `+` bei Text bedeutet **Zusammenfügen** (Konkatenation).
+- `+` with numbers means **addition**,
+- `+` with text means **concatenation** (joining together).
 
-Bevor wir also mit komplexeren Programmen arbeiten, sollten wir verstehen, 
-welche Datentypen es gibt und wie man mit ihnen umgeht.
+So before we move on to more complex programs, we should understand which data types exist and how to use them.
 
-## Die wichtigsten Datentypen
+## The Most Important Data Types
 
-Hier sind die grundlegenden Datentypen in Python:
+Here are the basic data types in Python:
 
-| Typ | Beispiel | Bedeutung |
-|-----|----------|-----------|
-| `int` | `10` | Ganze Zahl |
-| `float` | `3.14` | Kommazahl |
-| `str` | `"Hallo"` | Text (String) |
-| `bool` | `True`, `False` | Wahrheitswert (Ja/Nein) |
+| Type | Example | Meaning |
+|------|---------|---------|
+| `int` | `10` | Integer (whole number) |
+| `float` | `3.14` | Decimal number (floating point) |
+| `str` | `"Hello"` | Text (string) |
+| `bool` | `True`, `False` | Boolean (yes/no) |
 
-Sie können den Typ einer Variable mit der Funktion `type()` herausfinden:
+You can check the type of a variable using the `type()` function:
 
 ```{python}
-wert = 42
-print(type(wert))  # Ausgabe: <class 'int'>
+value = 42
+print(type(value))  # Output: <class 'int'>
 ```
 
-## Unterschiede zwischen `int` und `float`
+## Difference Between `int` and `float`
 
-In Python unterscheidet man zwischen **ganzen Zahlen** (`int`) und **Kommazahlen** (`float`):
+In Python, we distinguish between **integers** (`int`) and **floating point numbers** (`float`):
 
-- `int` steht für „integer“ – also ganze Zahlen wie `1`, `0`, `-10`
-- `float` steht für „floating point number“ – also Zahlen mit Dezimalstellen wie `3.14`, `0.5`, `-2.0`
+- `int` stands for “integer” – whole numbers like `1`, `0`, `-10`
+- `float` stands for “floating point number” – numbers with decimal places like `3.14`, `0.5`, `-2.0`
 
 ```{python}
 a = 10       # int
 b = 2.5      # float
 
-print("a:", a, "| Typ:", type(a))
-print("b:", b, "| Typ:", type(b))
+print("a:", a, "| Type:", type(a))
+print("b:", b, "| Type:", type(b))
 ```
 
 ::: {.callout-important icon="false" collapse="false"}
-Die Unterscheidung ist wichtig: Manche Rechenoperationen verhalten sich je nach Datentyp leicht unterschiedlich.
+This distinction is important: some operations behave slightly differently depending on the data type.
 :::
 
-## Was sind Booleans (`bool`)?
+## What Are Booleans (`bool`)?
 
-Ein **Boolean** ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:
+A **Boolean** is a truth value: it can only have two possible states:
 
-- `True` (wahr)
-- `False` (falsch)
+- `True`
+- `False`
 
-Solche Werte begegnen uns zum Beispiel bei Fragen wie:
+These values show up in situations like:
 
-- Ist die Temperatur über 30 °C?
-- Hat die Datei einen bestimmten Namen?
-- Ist die Liste leer?
+- Is the temperature above 30 °C?
+- Does the file have a certain name?
+- Is the list empty?
 
 ```{python}
-ist_sonnig = True
-hat_regenschirm = False
+is_sunny = True
+has_umbrella = False
 
-print("Sonnig:", ist_sonnig)
-print("Regenschirm dabei?", hat_regenschirm)
-print("Typ von 'ist_sonnig':", type(ist_sonnig))
+print("Sunny:", is_sunny)
+print("Has umbrella?", has_umbrella)
+print("Type of 'is_sunny':", type(is_sunny))
 ```
 
-Booleans werden besonders in **Bedingungen** und **Vergleichen** verwendet, was Sie in Kapitel 4 genauer kennenlernen.
+Booleans are especially useful in **conditions** and **comparisons**, which you will learn more about in Chapter 4.
 
-## Rechnen mit Zahlen
+## Doing Math with Numbers
 
-Python kann wie ein Taschenrechner verwendet werden:
+Python can be used like a calculator:
 
-| Operator | Beschreibung |
-| :--: | :--: |
-| `+`, `-` |  Addition / Subtraktion |
-| `*`, `/` | Multiplikation / Division |
-| `//`, `%` | Ganzzahlige Division / Rest | 
-| `**`| Potenzieren |
+| Operator | Description |
+|:--------:|:-----------:|
+| `+`, `-` | Addition / Subtraction |
+| `*`, `/` | Multiplication / Division |
+| `//`, `%` | Integer Division / Remainder |
+| `**` | Exponentiation |
 
 ```{python}
 a = 10
 b = 3
 
 print("Addition:", a + b)
-print("Subtraktion:", a - b)
-print("Multiplikation:", a * b)
-print("Potenzieren", a**b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Exponentiation:", a**b)
 print("Division:", a / b)
-print("Ganzzahlige Division:", a // b)
-print("Division mit Rest:", a % b)
+print("Integer Division:", a // b)
+print("Remainder:", a % b)
 ```
 
 ::: {.callout-note collapse="false"}
-`//` bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es 
-auch `%`. Hier wird eine Ganzzahldivision durchgeführt und der Rest ausgegeben.
+`//` means integer division: the result is rounded down. Alternatively, `%` performs integer division and returns the remainder.
 :::
 
-## Arbeiten mit Text
+## Working with Text
 
-Texte (Strings) können miteinander kombiniert werden:
-
-```{python}
-vorname = "Anna"
-nachname = "Beispiel"
-print("Willkommen, " + vorname + " " + nachname + "!")
-```
-
-Wenn Sie Text und Zahlen kombinieren wollen, müssen Sie die Zahl in einen String umwandeln:
+Text (strings) can be combined:
 
 ```{python}
-punkte = 95
-print("Sie haben " + str(punkte) + " Punkte erreicht.")
+first_name = "Anna"
+last_name = "Example"
+print("Welcome, " + first_name + " " + last_name + "!")
 ```
 
-## Umwandlung von Datentypen (Typecasting)
-
-Manchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – 
-z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.
-
-Das nennt man **Typecasting**. Hier sind die wichtigsten Funktionen dafür:
-
-| Funktion | Beschreibung | Beispiel |
-|----------|--------------|----------|
-| `str())` | Zahl → Text | `str(42)` → `"42"` |
-| `int()` | Text/Zahl → ganze Zahl | `int("10")` → `10` |
-| `float()` | Text/Zahl → Kommazahl | `float("3.14")` → `3.14` |
+If you want to combine text and numbers, you must convert the number to a string:
 
 ```{python}
-# Beispiel: Zahl als Text anzeigen
-punkte = 100
-print("Sie haben " + str(punkte) + " Punkte.")
-
-# Beispiel: String in Zahl umwandeln und berechnen
-eingabe = "3.5"
-wert = float(eingabe) * 2
-print("Doppelt so viel:", wert)
+points = 95
+print("You scored " + str(points) + " points.")
 ```
 
-Achten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – 
-`int("abc")` führt zu einem Fehler.
+## Type Conversion (Typecasting)
+
+Sometimes you need to convert a value from one data type to another—
+e.g., a number to a string so it can be printed.
+
+This is called **typecasting**. Here are the most common functions:
+
+| Function | Description | Example |
+|----------|-------------|---------|
+| `str()` | Number → Text | `str(42)` → `"42"` |
+| `int()` | Text/number → Integer | `int("10")` → `10` |
+| `float()` | Text/number → Float | `float("3.14")` → `3.14` |
+
+```{python}
+# Example: display a number as text
+points = 100
+print("You scored " + str(points) + " points.")
+
+# Example: convert string to number and do a calculation
+input_value = "3.5"
+value = float(input_value) * 2
+print("Double the value:", value)
+```
+
+When converting, make sure the content is appropriate – 
+`int("abc")` will cause an error.
 
 
 ::: {.callout-tip collapse="true"}
-## Aufgabe: Alter in Tagen
+## Exercise: Age in Days
 
-Berechnen Sie, wie alt eine Person in Tagen ist.
+Calculate how old a person is in days.
 
 ```{python}
-alter_jahre = 32
-tage = alter_jahre * 365
-print("Sie sind ungefähr " + str(tage) + " Tage alt.")
+age_years = 32
+days = age_years * 365
+print("You are approximately " + str(days) + " days old.")
 ```
 
-Tipp: Denken Sie an die Umwandlung in einen String, wenn Sie die Zahl ausgeben möchten.
+Tip: Remember to convert the number to a string when printing it.
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
-alter = 32
-tage = alter * 365
-print("Sie sind ungefähr " + str(tage) + " Tage alt.")
+age = 32
+days = age * 365
+print("You are approximately " + str(days) + " days old.")
 ```
 :::
 :::

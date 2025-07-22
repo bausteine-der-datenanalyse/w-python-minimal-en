@@ -1,117 +1,117 @@
-# Entscheidungen und Wiederholungen
+# Decisions and Loops
 
-Programme müssen oft Entscheidungen treffen – zum Beispiel abhängig von einer Benutzereingabe oder einem bestimmten Wert. Ebenso müssen bestimmte Aktionen mehrfach durchgeführt werden.
+Programs often need to make decisions – for example, based on user input or a specific value. Similarly, certain actions need to be repeated multiple times.
 
-Dafür gibt es zwei zentrale Elemente in Python:
+Python provides two key elements for this:
 
-- **Kontrollstrukturen**: `if`, `elif`, `else`
-- **Schleifen**: `while` und `for`
+- **Control structures**: `if`, `elif`, `else`
+- **Loops**: `while` and `for`
 
-## Lernziele dieses Kapitels
+## Learning Objectives of This Chapter
 
-Am Ende dieses Kapitels können Sie:
+By the end of this chapter, you will be able to:
 
-- Bedingungen formulieren und mit `if`, `elif`, `else` nutzen,
-- Vergleichsoperatoren verwenden (`==`, `<`, `!=`, …),
-- Wiederholungen mit `while` und `for` umsetzen.
+- Formulate conditions using `if`, `elif`, and `else`,
+- Use comparison operators (`==`, `<`, `!=`, …),
+- Implement loops with `while` and `for`.
 
-## Bedingungen mit `if`, `elif`, `else`
+## Conditions with `if`, `elif`, `else`
 
 ```{python}
-alter = 17
+age = 17
 
-if alter >= 18:
-    print("Sie sind volljährig.")
+if age >= 18:
+    print("You are an adult.")
 else:
-    print("Sie sind minderjährig.")
+    print("You are a minor.")
 ```
 
-Mehrere Fälle unterscheiden:
+Handling multiple cases:
 
 ```{python}
-note = 2.3
+grade = 2.3
 
-if note <= 1.5:
-    print("Sehr gut")
-elif note <= 2.5:
-    print("Gut")
-elif note <= 3.5:
-    print("Befriedigend")
+if grade <= 1.5:
+    print("Very good")
+elif grade <= 2.5:
+    print("Good")
+elif grade <= 3.5:
+    print("Satisfactory")
 else:
-    print("Ausreichend oder schlechter")
+    print("Sufficient or worse")
 ```
 
-## Vergleichsoperatoren
+## Comparison Operators
 
-| Ausdruck | Bedeutung |
-|----------|-----------|
-| `a == b` | gleich |
-| `a != b` | ungleich |
-| `a < b`  | kleiner als |
-| `a > b`  | größer als |
-| `a <= b` | kleiner oder gleich |
-| `a >= b` | größer oder gleich |
+| Expression | Meaning             |
+|------------|---------------------|
+| `a == b`   | equal               |
+| `a != b`   | not equal           |
+| `a < b`    | less than           |
+| `a > b`    | greater than        |
+| `a <= b`   | less than or equal  |
+| `a >= b`   | greater than or equal |
 
-## Wiederholungen mit `while`
+## Repetitions with `while`
 
 ```{python}
-zähler = 0
+counter = 0
 
-while zähler < 5:
-    print("Zähler ist:", zähler)
-    zähler += 1
+while counter < 5:
+    print("Counter is:", counter)
+    counter += 1
 ```
 
 ::: {.callout-important icon="false" collapse="false"}
-Achten Sie auf eine Abbruchbedingung – sonst läuft die Schleife endlos!
+Make sure to include a stopping condition – otherwise, the loop will run endlessly!
 :::
 
-## Schleifen mit `for` und `range()`
+## Loops with `for` and `range()`
 
-Wenn Sie eine Schleife **genau eine bestimmte Anzahl von Malen** durchlaufen möchten, nutzen Sie `for` mit `range()`:
+If you want to repeat something **a specific number of times**, use `for` with `range()`:
 
 ```{python}
 for i in range(5):
-    print("Durchlauf:", i)
+    print("Iteration:", i)
 ```
 
-Start- und Endwert festlegen:
+Set a custom start and end value:
 
 ```{python}
 for i in range(1, 6):
     print(i)
 ```
 
-## Was macht `range()` genau?
+## What exactly does `range()` do?
 
-Die Funktion `range()` erzeugt eine Abfolge von Zahlen, über die Sie mit einer `for`-Schleife iterieren können.
+The `range()` function creates a sequence of numbers that can be iterated over with a `for` loop.
 
-### Varianten:
+### Variants:
 
 ```python
 range(5)
 ```
-➡️ ergibt: `0, 1, 2, 3, 4` (startet bei 0, endet **vor** 5)
+➡️ yields: `0, 1, 2, 3, 4` (starts at 0, ends **before** 5)
 
 ```python
 range(2, 6)
 ```
-➡️ ergibt: `2, 3, 4, 5` (startet bei 2, endet **vor** 6)
+➡️ yields: `2, 3, 4, 5` (starts at 2, ends **before** 6)
 
 ```python
 range(1, 10, 2)
 ```
-➡️ ergibt: `1, 3, 5, 7, 9` (Schrittweite = 2)
+➡️ yields: `1, 3, 5, 7, 9` (step size = 2)
 
-`range()` erzeugt keine echte Liste, sondern ein sogenanntes „range-Objekt“, das wie eine Liste verwendet werden kann.
+`range()` does not create a real list, but a so-called “range object” that behaves like a list.
 
 ::: {.callout-tip collapse="true"}
-## ✏️ Aufgabe: Zähle von 1 bis 10
+## ✏️ Task: Count from 1 to 10
 
-Nutzen Sie eine `for`-Schleife, um die Zahlen von 1 bis 10 auszugeben.
+Use a `for` loop to print the numbers from 1 to 10.
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
 for i in range(1, 11):
     print(i)
@@ -120,21 +120,16 @@ for i in range(1, 11):
 :::
 
 ::: {.callout-tip collapse="true"}
-## Aufgabe: Gerade Zahlen ausgeben
+## Task: Print even numbers
 
-Geben Sie alle geraden Zahlen von 0 bis 20 aus. Tipp: Eine Zahl ist gerade, wenn `zahl % 2 == 0`.
+Print all even numbers from 0 to 20. Tip: A number is even if `number % 2 == 0`.
 
 ::: {.callout-caution icon="false" collapse="true"}
-## Lösung
+## Solution
 ```{python}
-for zahl in range(0, 21):
-    if zahl % 2 == 0:
-        print(zahl)
+for number in range(0, 21):
+    if number % 2 == 0:
+        print(number)
 ```
 :::
 :::
-
-
-
-
-

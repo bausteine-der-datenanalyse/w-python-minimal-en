@@ -1,11 +1,10 @@
-In diesem Bausteine werden die Grundzüge der Programmierung mit Python vermittelt. 
-In diesem Baustein lernen Sie ...
+In this module, the fundamentals of programming with Python are taught.
+In this module, you will learn …
 
-  - Grundlagen des Programmierens
-  
-  - Ausgaben in Python, Grundlegende Datentypen, FLusskontrolle
+- the basics of programming
 
-  - die Dokumentation zu lesen und zu verwenden
+- output in Python, basic data types, flow control
 
-  - Module und Pakete laden
+- how to read and use documentation
 
+- how to import modules and packages

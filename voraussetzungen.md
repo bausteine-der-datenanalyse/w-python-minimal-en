@@ -1,1 +1,1 @@
-Keine Voraussetzungen
+No requirements

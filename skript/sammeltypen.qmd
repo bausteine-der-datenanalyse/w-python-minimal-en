@@ -1,561 +1,561 @@
-# Sammeltypen
-Sammeltypen werden benutzt, um mehrere Werte in einer Variablen zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen, die jeweils eine eigene Klasse sind:
+# Collection Types
+Collection types are used to store and process multiple values in a single variable. Python has four collection types, each of which is its own class:
 
-  - [Listen](https://de.wikipedia.org/wiki/Liste_(Datenstruktur)) enthalten eine flexible Anzahl von Elementen beliebigen Typs.
+  - [Lists](https://en.wikipedia.org/wiki/List_%28abstract_data_type%29) contain a flexible number of elements of any type.
 
-  - [Tupel](https://de.wikipedia.org/wiki/Tupel_%28Informatik%29) können wie Listen Elemente beliebigen Typs enthalten, sind aber unveränderlich.
+  - [Tuples](https://en.wikipedia.org/wiki/Tuple) can contain elements of any type, just like lists, but they are immutable.
 
-  - [Mengen](https://de.wikipedia.org/wiki/Menge_%28Datenstruktur%29) sind ungeordnete Sammlungen, die jedes Element nur einmal enthalten können.
+  - [Sets](https://en.wikipedia.org/wiki/Set_%28abstract_data_type%29) are unordered collections that can contain each element only once.
 
-  - [assoziative Arrays](https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29) oder Dictionaries sind Zuordnungstabellen, d. h. sie bestehen aus Schlüssel-Wert-Paaren. 
-  
-In diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen erläutert.
+  - [Associative arrays](https://en.wikipedia.org/wiki/Associative_array) or dictionaries are mapping tables, i.e. they consist of key-value pairs.
 
-## Listen
-Wie alle Typen in Python werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste werden die Elemente durch eckige Klammern `[]` eingeklammert und mit Kommata `,` getrennt. Listen können mit dem `+`-Operator verkettet werden. `*` verkettet eine Liste n-mal.
+This chapter first briefly introduces the four collection types. It then explains how to work with them, focusing in particular on lists.
+
+## Lists
+As with all types in Python, lists are created through assignment. When defining a list, the elements are enclosed in square brackets `[]` and separated by commas `,`. Lists can be concatenated with the `+` operator. `*` concatenates a list n times.
 
 ```{python}
 text_variable = 'abc'
 
-liste1 = [1, 'xy', True, text_variable]
-print(liste1)
+list1 = [1, 'xy', True, text_variable]
+print(list1)
 
-# Listen können auch Listen enthalten
-liste2 = [None, liste1]
-print(liste2)
+# Lists can also contain lists
+list2 = [None, list1]
+print(list2)
 
-# Listen können mit + und * verkettet werden
-print(liste1 + liste2)
-print(liste1 * 2)
+# Lists can be concatenated with + and *
+print(list1 + list2)
+print(list1 * 2)
 ```
 
-Eine leere Liste kann durch Zuweisung von `[]` erstellt werden.
+An empty list can be created by assigning `[]`.
 
 ```{python}
-leere_liste = []
-print(leere_liste)
+empty_list = []
+print(empty_list)
 ```
 
-### Slicing: der Zugriffsoperator []
-Der Zugriff auf einzelne oder mehrere Elemente einer Liste (und andere Sammeltypen) erfolgt über den Zugriffsoperator []. Ein Ausschnitt aus einem Objekt wird Slice genannt, der Operator heißt deshalb auch Slice Operator.
+### Slicing: the access operator []
+Access to individual or multiple elements of a list (and other collection types) is done via the access operator []. A section extracted from an object is called a slice, which is why the operator is also known as the slice operator.
 
-#### Zugriff auf einzelne Elemente
-Elemente werden über ihren Index, bei 0 beginnend, angesprochen.
+#### Accessing individual elements
+Elements are accessed via their index, starting at 0.
 
 ```{python}
-print(liste1)
-print(liste1[0])
-print(liste1[3])
+print(list1)
+print(list1[0])
+print(list1[3])
 ```
 
-Auf verschachtelte Listen kann mit zwei aufeinanderfolgenden Zugriffsoperatoren zugegriffen werden. Die Liste `liste2` enthält an Indexposition 1 eine Liste mit 4 Elementen.
+Nested lists can be accessed with two consecutive access operators. The list `list2` contains a list with 4 elements at index position 1.
 
 ```{python}
-print(liste2)
-print(liste2[1])
-print(liste2[1][0], liste2[1][1], liste2[1][2], liste2[1][3])
+print(list2)
+print(list2[1])
+print(list2[1][0], list2[1][1], list2[1][2], list2[1][3])
 ```
 
-Mit negativen Indizes können Elemente vom Ende aus angesprochen werden. So entspricht z. B. die -1 dem letzten Element.
+Negative indices can be used to access elements from the end. For example, -1 corresponds to the last element.
 
 ```{python}
-print(liste1)
-print(liste1[-1], liste1[-3])
+print(list1)
+print(list1[-1], list1[-3])
 ```
 
-#### Zugriff auf mehrere Elemente
-Indexbereiche können in der Form `[start:stop:step]` angesprochen werden. `start` ist das erste adressierte Element, `stop` *das erste nicht mehr adressierte Element* und `step` die Schrittweite.
+#### Accessing multiple elements
+Index ranges can be addressed in the form `[start:stop:step]`. `start` is the first element addressed, `stop` is *the first element no longer addressed*, and `step` is the step size.
 
 ::: {.border}
 
-| Zugriffsoperator | Ausschnitt |
+| Access operator | Selection |
 |---|---|
-| liste[start:stop] | Elemente von start bis stop - 1 |
-| liste[:] | Alle Elemente der Liste |
-| liste[start:] | Elemente von start bis zum Ende der Liste |
-| liste[:stop] | Elemente vom Anfang der Liste bis stop - 1 |
-| liste[::3] | Auswahl jedes dritten Elements |
+| list[start:stop] | Elements from start to stop - 1 |
+| list[:] | All elements of the list |
+| list[start:] | Elements from start to the end of the list |
+| list[:stop] | Elements from the beginning of the list to stop - 1 |
+| list[::3] | Selection of every third element |
 
 &nbsp;
 
-Negative Werte für `start`, `stop` oder `step` bewirken eine Rückwärtsauswahl von Elementen.
+Negative values for `start`, `stop`, or `step` result in a backward selection of elements.
 
-| Zugriffsoperator | Ausschnitt |
+| Access operator | Selection |
 |---|---|
-| liste[-1] | das letzte Element der Liste |
-| liste[-2:] | die letzten beiden Elemente der Liste |
-| liste[:-2] | alle bis auf die beiden letzten Elemente |
-| liste[::-1] | alle Elemente in umgekehrter Reihenfolge |
-| liste[1::-1] | die ersten beiden Elemente in umgekehrter Reihenfolge |
-| liste[:-3:-1] | die letzten beiden Elemente in umgekehrter Reihenfolge |
-| liste[-3::-1] | alle außer die letzten beiden Elemente in umgekehrter Reihenfolge |
+| list[-1] | the last element of the list |
+| list[-2:] | the last two elements of the list |
+| list[:-2] | all elements except the last two |
+| list[::-1] | all elements in reverse order |
+| list[1::-1] | the first two elements in reverse order |
+| list[:-3:-1] | the last two elements in reverse order |
+| list[-3::-1] | all elements except the last two, in reverse order |
 
 &nbsp;
 
-(Beispiele von Greg Hewgill unter der Lizenz [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de) verfügbar auf [stackoverflow](https://stackoverflow.com/a/509295). 2009)
+(Examples by Greg Hewgill, available under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license on [Stack Overflow](https://stackoverflow.com/a/509295). 2009)
 :::
 
-#### Zeichenfolgen
-Auch aus Zeichenfolgen können mit dem Slice Operator Ausschnitte ausgewählt werden.
+#### Strings
+Sections can also be selected from strings using the slice operator.
 
 ```{python}
-print('Ich bin ein string'[::2])
-print('Hallo Welt'[0:6])
+print('I am a string'[::2])
+print('Hello World'[0:6])
 print('abc'[::-1])
 ```
 
-### Listenmethoden
-Für den Listentyp sind verschiedene Methoden definiert.
+### List methods
+Various methods are defined for the list type.
 
-#### Elemente bestimmen
+#### Determining elements
 
-- `list.index(x, start, stop)` gibt die Indexposition des ersten Elements x aus. Die optionalen Argumente `start` und `stop` erlauben es, den Suchbereich einzuschränken.
+- `list.index(x, start, stop)` returns the index position of the first element x. The optional arguments `start` and `stop` allow you to restrict the search range.
 
-- `list.count(x)` gibt die Häufigkeit von x in der Liste aus.
+- `list.count(x)` returns the number of times x occurs in the list.
 
-- `list.reverse()` kehrt die Reihenfolge der Listenelemente um (die Liste wird dadurch verändert!). 
+- `list.reverse()` reverses the order of the list elements (this modifies the list!).
 
-- `list.sort(reverse = False)` sortiert die Liste, mit dem optionalen Argument reverse = True absteigend (die Liste wird dadurch verändert!). Die Datentypen innerhalb der Liste müssen sortierbar sein (d. h. alle Elemente sind numerisch oder Zeichen).
+- `list.sort(reverse = False)` sorts the list; with the optional argument reverse = True, it sorts in descending order (this modifies the list!). The data types within the list must be sortable (i.e. all elements must be either numeric or characters).
 
 ```{python}
-print(liste1)
+print(list1)
 
-liste1.reverse()
-print(liste1)
+list1.reverse()
+print(list1)
 
-# True wird als 1 gezählt
-print("True wird als 1 gezählt:", liste1.index(1), liste1.count(1))
+# True is counted as 1
+print("True is counted as 1:", list1.index(1), list1.count(1))
 ```
 
-#### Elemente einfügen
+#### Inserting elements
 
-- `list.append(x)` hängt ein einzelnes Element an das Ende der Liste an.
+- `list.append(x)` appends a single element to the end of the list.
 
-- `list.extend(sammeltyp)` hängt alle mit `sammeltyp` übergebenen Elemente an das Ende der Liste an. Der Sammeltyp kann eine Liste, ein Tupel, eine Menge oder ein Dictionary sein.
+- `list.extend(collection)` appends all elements from the given `collection` to the end of the list. The collection can be a list, a tuple, a set, or a dictionary.
 
-- `list.insert(i, x)` fügt an der Position i Element x ein.
+- `list.insert(i, x)` inserts element x at position i.
 
 ```{python}
-print(liste1, "\n")
+print(list1, "\n")
 
-liste1.append('Hallo')
-liste1.extend(['Hallo', 'Welt!'])
-liste1.insert(2, '12345')
+list1.append('Hello')
+list1.extend(['Hello', 'World!'])
+list1.insert(2, '12345')
 
-print(liste1)
+print(list1)
 ```
 
-#### Elemente entfernen
+#### Removing elements
 
-- `list.remove(x)` entfernt *das erste* Element x in der Liste und gibt einen ValueError zurück, wenn x nicht in der Liste enthalten ist.
+- `list.remove(x)` removes *the first* occurrence of element x in the list and raises a ValueError if x is not contained in the list.
 
-- `liste.pop(i)` entfernt das Element an der Indexposition i. Wird kein Index angegeben, wird das letzte Element entfernt. Die Methode `liste.pop(i)` gibt die entfernten Elemente zurück.
+- `list.pop(i)` removes the element at index position i. If no index is given, the last element is removed. The `list.pop(i)` method returns the removed element.
 
-- `liste.clear()` entfernt alle Elemente einer Liste.
+- `list.clear()` removes all elements from a list.
 
 ```{python}
-liste1.remove('Hallo')
-print(liste1)
+list1.remove('Hello')
+print(list1)
 
-liste1.pop(2)
+list1.pop(2)
 ```
 
-#### Listen und Listenelemente kopieren
-In Python enthalten Listen Daten nicht direkt, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Wird eine Liste durch Zuweisung einer anderen Liste angelegt, dann werden nicht die Elemente der Liste kopiert, sondern beide Listen  greifen dann auf den selben Speicherort zu.
+#### Copying lists and list elements
+In Python, lists don't contain data directly; instead, they consist of pointers to the memory locations of the elements they contain. If a list is created by assigning it to another list, the elements of the list are not copied — instead, both lists then access the same memory location.
 
 ```{python}
-# Kopieren durch Zuweisung
-liste1 = [1, 'xy', True, text_variable]
-print("liste1:", liste1, "\n")
-liste2 = liste1
+# Copying by assignment
+list1 = [1, 'xy', True, text_variable]
+print("list1:", list1, "\n")
+list2 = list1
 
-## Ändern eines Elements in liste2
-liste2[0] = 'ABC'
-print("Auch liste1 hat sich durch die Zuweisung in liste2 verändert:", liste1, "\n")
+## Changing an element in list2
+list2[0] = 'ABC'
+print("list1 has also changed because of the assignment to list2:", list1, "\n")
 
 ```
 
-Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode `liste.copy()` verwendet werden. Auch durch die Verwendung des Zugriffsoperators `[:]` wird eine neue Liste im Speicher angelegt.
+To copy a list and create a new object in memory, the `list.copy()` method can be used. Using the access operator `[:]` also creates a new list in memory.
 
 ```{python}
-# Verwendung der Methode liste.copy()
-liste1 = [1, 'xy', True, text_variable]
-liste2 = liste1.copy()
+# Using the list.copy() method
+list1 = [1, 'xy', True, text_variable]
+list2 = list1.copy()
 
-## Ändern eines Elements in liste2
-liste2[0] = 'ABC'
-print("liste1 bleibt durch die Zuweisung in liste2 unverändert:", liste1, "\n")
+## Changing an element in list2
+list2[0] = 'ABC'
+print("list1 remains unchanged by the assignment to list2:", list1, "\n")
 
-# Verwendung des Slice Operators
-liste1 = [1, 'xy', True, text_variable]
-liste2 = liste1[:]
+# Using the slice operator
+list1 = [1, 'xy', True, text_variable]
+list2 = list1[:]
 
-## Ändern eines Elements in liste2
-liste2[0] = 'ABC'
-print("liste1 bleibt durch die Zuweisung in liste2 unverändert:", liste1)
+## Changing an element in list2
+list2[0] = 'ABC'
+print("list1 remains unchanged by the assignment to list2:", list1)
 ```
 
-Die Kopie von Listenelementen ist in dieser Hinsicht unproblematisch.
+Copying list elements is unproblematic in this regard.
 
 ```{python}
-# Verwendung des Slice Operators
-liste1 = [1, 'xy', True, text_variable]
-liste2 = liste1[0:2]
+# Using the slice operator
+list1 = [1, 'xy', True, text_variable]
+list2 = list1[0:2]
 
-# Ändern eines Elements in liste2
-liste2[0] = 'ABC'
-print("liste1 bleibt durch die Zuweisung in liste2 unverändert:", liste1)
+# Changing an element in list2
+list2[0] = 'ABC'
+print("list1 remains unchanged by the assignment to list2:", list1)
 ```
 
-Um zu überprüfen, ob sich zwei Objekte den Speicherbereich teilen, kann die Objekt-ID mit der Funktion `id()` verglichen oder die Operatoren `is` bzw. `is not` verwendet werden, die die Funktion `id()` aufrufen.
+To check whether two objects share the same area of memory, you can compare the object ID using the `id()` function, or use the `is` and `is not` operators, which internally call the `id()` function.
 
 ```{python}
-liste1 = [1, 'xy', True, text_variable]
-liste2 = liste1
+list1 = [1, 'xy', True, text_variable]
+list2 = list1
 
-print("ID liste1:", id(liste1))
-print("ID liste2:", id(liste2))
-print("ID liste1 gleich ID list2:", liste1 is liste2)
+print("ID of list1:", id(list1))
+print("ID of list2:", id(list2))
+print("ID of list1 equal to ID of list2:", list1 is list2)
 ```
 
 ::: {.callout-note collapse="true"}
-## Identität vs. Wertgleichheit
+## Identity vs. equality
 
-Der Operator `is` prüft die Identität zweier Objekte und unterscheidet sich dadurch vom logischen Operator `==`, der auf Wertgleichheit prüft. Da liste1 und liste2 die gleichen Elemente enthalten, liegen sowohl Identität und Wertgleichheit vor. Der Unterschied von Identität und Wertgleichheit kann anhand eines Werts verdeutlicht werden (Im Code-Beispiel wird eine Syntax-Warnung unterdrückt.).
+The `is` operator checks the identity of two objects, which distinguishes it from the logical operator `==`, which checks for equality of values. Since list1 and list2 contain the same elements, both identity and equality hold here. The difference between identity and equality can be illustrated using a single value (a syntax warning is suppressed in the code example below).
 
 ```{python}
 #| warning: false
 
-# Wertgleichheit
+# Equality
 print(1 == 1.0)
-print(liste1 == liste2, "\n")
+print(list1 == list2, "\n")
 
-# Identität
+# Identity
 print(1 is 1.0)
-print(liste1 is liste2)
+print(list1 is list2)
 ```
 
 :::
 
-### Aufgaben Listen
+### Exercises: lists
 
-1. Erstellen Sie eine Liste 'wochentage', die die sieben Tage der Woche enthält. Verwenden Sie den Slice-Operator, um eine neue Liste 'wochenende' mit den Tagen des Wochenendes zu erstellen. Entfernen Sie die Tage des Wochenendes aus der Liste 'wochentage'.
+1. Create a list `weekdays` containing the seven days of the week. Use the slice operator to create a new list `weekend` with the days of the weekend. Remove the days of the weekend from the `weekdays` list.
 
-2. 4-Tage-Woche: Verwenden Sie Listenmethoden, um den Freitag aus der Liste 'wochentage' zu entfernen und der Liste 'wochenende' vor dem Samstag hinzuzufügen.
+2. Four-day week: Use list methods to remove Friday from the `weekdays` list and add it to the `weekend` list before Saturday.
 
-3. Bestimmen Sie in der Liste `zahlen = [34, 12, 0, 67, 23]` die Position des Werts 0. Entfernen Sie den Wert aus der Liste und geben Sie die Liste aufsteigend sortiert aus. 
+3. In the list `numbers = [34, 12, 0, 67, 23]`, determine the position of the value 0. Remove the value from the list and print the list sorted in ascending order.
 
-4. Geben Sie nun mit Hilfe des Zugriffsoperators `[]` die Indexpositionen 1 und 3 der sortierten Liste 'zahlen' aus.
+4. Now use the access operator `[]` to print the elements at index positions 1 and 3 of the sorted `numbers` list.
 
-**Musterlösung kann Marc machen.**
+**Sample solution can be done by Marc.**
 
-::: {#tip-listen .callout-tip collapse="true"}
-## Musterlösung
+::: {#tip-lists .callout-tip collapse="true"}
+## Sample solution
 
 :::
 
-## Tupel
-Tupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte. Das heißt, die Elemente eines angelegten Tupels können weder geändert, noch entfernt werden. Auch können keine neuen Elemente zum Tupel hinzugefügt werden.
+## Tuples
+Tuples are very similar to lists, but tuples are immutable data objects. This means that the elements of an existing tuple can neither be changed nor removed. Nor can new elements be added to a tuple.
 
-Tupel werdem mit runden Klammern `()` erzeugt, die Elemente werden mit einem Komma `,` getrennt. Ein Tupel mit einem Wert wird mit einem Komma in der Form `(wert, )` angelegt. Der Zugriff auf die Elemente eines Tupels ist mit dem Slice-Operator `[start:stop:step]` möglich. Tupel können mit den Operatoren `+` und `*` verkettet werden.
+Tuples are created with round brackets `()`, and the elements are separated by a comma `,`. A tuple with a single value is created with a comma in the form `(value, )`. The elements of a tuple can be accessed with the slice operator `[start:stop:step]`. Tuples can be concatenated with the `+` and `*` operators.
 
 ```{python}
-tupel1 = (2, 7.8, 'Feuer', True, text_variable)
-tupel2 = (1, )
+tuple1 = (2, 7.8, 'Fire', True, text_variable)
+tuple2 = (1, )
 
-print(tupel1)
-print(tupel1[2:4])
-print(tupel1[::2])
-print(tupel1[-1])
-print(tupel1[2:4] + tupel2)
-print(3 * tupel2)
+print(tuple1)
+print(tuple1[2:4])
+print(tuple1[::2])
+print(tuple1[-1])
+print(tuple1[2:4] + tuple2)
+print(3 * tuple2)
 ```
 
-### Tupel kopieren
-Tupel verhalten sich beim Kopieren gegensätzlich zu Listen. Für Tupel ist die Methode `.copy()` nicht definiert. Dagegen bewirkt die Kopie mittels dem Zugriffsoperator `[:]` zwar, dass zwei Tupel auf den selben Speicherplatz zugreifen. Bei der Neuzuweisung eines Tupels legt Python, wie für jedes Objekt, ein neues Objekt im Speicher an.
+### Copying tuples
+Tuples behave the opposite way to lists when it comes to copying. The `.copy()` method is not defined for tuples. However, copying with the access operator `[:]` does cause two tuples to access the same memory location. When a tuple is reassigned, Python — as with any object — creates a new object in memory.
 
 ```{python}
-# Kopieren durch Zuweisung
-tupel1 = (1, 2, 3)
-tupel2 = tupel1
+# Copying by assignment
+tuple1 = (1, 2, 3)
+tuple2 = tuple1
 
-## Neuzuweisung der Werte von tupel1
-tupel1 = (4, 5, 6)
-print(f"Die in tupel2 gespeicherten Werte sind unverändert:\n{tupel1} {tupel2}\n")
+## Reassigning the values of tuple1
+tuple1 = (4, 5, 6)
+print(f"The values stored in tuple2 are unchanged:\n{tuple1} {tuple2}\n")
 
-# Kopieren mit Slice Operator
-tupel1 = (1, 2, 3)
-tupel2 = tupel1[:]
-print(tupel2 is tupel1)
+# Copying with the slice operator
+tuple1 = (1, 2, 3)
+tuple2 = tuple1[:]
+print(tuple2 is tuple1)
 
-## Neuzuweisung der Werte von tupel1
-tupel1 = (4, 5, 6)
-print(tupel1, tupel2)
+## Reassigning the values of tuple1
+tuple1 = (4, 5, 6)
+print(tuple1, tuple2)
 ```
 
-## Mengen
-In Python können Mengen mit der `set()` Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt). Mengen sind ungeordnete Sammelung, dementsprechend haben die Elemente keine Reihenfolge.
+## Sets
+In Python, sets can be created with the `set()` function, e.g. from a list or a tuple, or by using curly braces `{}` (an empty set can only be created with `set()`, since `{}` creates an empty dictionary). Sets are unordered collections, so the elements have no particular order.
 
 ```{python}
-liste = [1, 1, 5, 3, 3, 4, 2, 'a', 123, 1000, ('tupel', 5)]
-print("Das Objekt liste als Menge:\n", set(liste))
+my_list = [1, 1, 5, 3, 3, 4, 2, 'a', 123, 1000, ('tuple', 5)]
+print("The my_list object as a set:\n", set(my_list))
 
-menge = {1, 2, 3, 4, 5, 1000, ('tupel', 5), 'a', 123}
-print("Die Menge kann auch mit geschweiften Klammern erzeugt werden:", menge)
+my_set = {1, 2, 3, 4, 5, 1000, ('tuple', 5), 'a', 123}
+print("A set can also be created using curly braces:", my_set)
 ```
 
-Mengen können beispielsweise für Vergleichsoperationen verwendet werden.
+Sets can be used, for example, for comparison operations.
 
 ```{python}
 
-menge_a = set('Python')
-menge_b = set('ist super')
+set_a = set('Python')
+set_b = set('is great')
 
-# einzigartige Zeichen in a
-print("Menge a:", menge_a)
+# unique characters in a
+print("Set a:", set_a)
 
-# Zeichen in a, aber nicht in b
-print("Menge a - b:", menge_a - menge_b)
+# characters in a but not in b
+print("Set a - b:", set_a - set_b)
 
-# Zeichen in a oder b
-print("Menge a | b:", menge_a | menge_b)
+# characters in a or b
+print("Set a | b:", set_a | set_b)
 
-# Zeichen in a und b
-print("Menge a & b:", menge_a & menge_b)
+# characters in a and b
+print("Set a & b:", set_a & set_b)
 
-# Zeichen in a oder b, aber nicht in beiden (XOR)
-print("Menge a ^ b:", menge_a ^ menge_b)
+# characters in a or b, but not in both (XOR)
+print("Set a ^ b:", set_a ^ set_b)
 ```
 
-### Mengen kopieren
-Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode `.copy()` für Mengen definiert ist. Allerdings kann der Zugriffsoperator `[]` nicht auf Mengen angewendet werden.
+### Copying sets
+Sets behave like tuples, with the difference that the `.copy()` method is defined for sets. However, the access operator `[]` cannot be applied to sets.
 
 ```{python}
-# Kopieren durch Zuweisung
+# Copying by assignment
 set1 = {1, 2, 3}
 set2 = set1
 print(set1 is set2)
 
-## Neuzuweisen von set1
+## Reassigning set1
 set1 = {4, 5, 6}
-print(f"Die in set2 gespeicherten Werte sind unverändert:\n{set1} {set2}")
+print(f"The values stored in set2 are unchanged:\n{set1} {set2}")
 
-# Kopieren durch Methode .copy()
+# Copying using the .copy() method
 set1 = {1, 2, 3}
 set2 = set1.copy()
 print(set1 is set2)
 
-## Neuzuweisen von set1
+## Reassigning set1
 set1 = {4, 5, 6}
-print(f"Die in set2 gespeicherten Werte sind unverändert:\n{set1} {set2}")
+print(f"The values stored in set2 are unchanged:\n{set1} {set2}")
 
 ```
 
 ## Dictionaries
-Dictionaries bestehen aus Schlüssel-Wert-Paaren. Die Schlüssel können Zahlen oder Zeichenketten sein, jeder Schlüssel darf nur einmal vorkommen. Dictionaries werden mit geschweiften Klammern `{}` definiert. Die Schlüssel und deren zugehörigen Werte werden mit einem Doppelpunkt `:` getrennt. Der Zugriff auf die Werte erfolgt mit dem Zugriffsoperator `[]`, welcher den oder die Schlüssel beinhaltet. Ein Zugriff über die Indexposition der Schlüssel ist nicht möglich, da Zahlen als Schlüssel interpretiert werden.
+Dictionaries consist of key-value pairs. The keys can be numbers or strings, and each key may occur only once. Dictionaries are defined with curly braces `{}`. The keys and their associated values are separated by a colon `:`. Values are accessed with the access operator `[]`, which contains the key or keys. Access via the index position of the keys is not possible, since numbers are interpreted as keys.
 
 ```{python}
-dictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}
+dictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tuple', 5, 6)}
 print(dictionary1, "\n")
 
-print("Werte des Schlüssels 1:", dictionary1[1])
-print("Werte des Schlüssels 'b':",  dictionary1['b'])
+print("Values of key 1:", dictionary1[1])
+print("Values of key 'b':",  dictionary1['b'])
 ```
 
-Auf die Schlüssel eines Dictionaries kann über die Methode `dictionary.keys()`, auf die Werte mittels der Methode `dictionary.values()` zugegriffen werden. 
+The keys of a dictionary can be accessed with the `dictionary.keys()` method, and the values with the `dictionary.values()` method.
 
 ```{python}
-print("Schlüssel:", dictionary1.keys(), "\n")
-print("Werte:", dictionary1.values())
+print("Keys:", dictionary1.keys(), "\n")
+print("Values:", dictionary1.values())
 ```
 
-### Dictionaries kopieren
-Dictionaries verhalten sich beim Kopieren wie Listen, das heißt beim Kopieren durch Zuweisung teilen sich Dictionaries den Speicherbereich.
+### Copying dictionaries
+Dictionaries behave like lists when copied, meaning that copying by assignment causes dictionaries to share the same memory area.
 
 ```{python}
-# Kopieren durch Zuweisung
+# Copying by assignment
 print("dictionary:", dictionary1, "\n")
 dictionary2 = dictionary1
 
-## Ändern eines Elements in dictionary2
+## Changing an element in dictionary2
 dictionary2[1] = 'ABC'
-print("Auch dictionary1 hat sich durch die Zuweisung in dictionary2 verändert:\n",
+print("dictionary1 has also changed because of the assignment to dictionary2:\n",
        dictionary1, "\n")
 
-# Verwendung der Methode dictionary.copy()
-dictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}
+# Using the dictionary.copy() method
+dictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tuple', 5, 6)}
 dictionary2 = dictionary1.copy()
 
-## Ändern eines Elements in dictionary2
+## Changing an element in dictionary2
 dictionary2[1] = 'ABC'
-print("dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:\n",
+print("dictionary1 remains unchanged by the assignment to dictionary2:\n",
        dictionary1, "\n")
 
 ```
 
-## Übersicht Sammeltypen
-| Merkmal                                        | Listen | Tupel | Mengen | Dictionary |
+## Overview of collection types
+| Feature                                        | Lists | Tuples | Sets | Dictionary |
 |------------------------------------------------|--------|-------|--------|------------|
-| Beschreibung                            | flexible Anzahl von Elementen beliebigen Typs | Elemente beliebigen Typs, unveränderlich | ungeordnete Sammlung, jedes Element nur einmal enthalten | Zuordnungstabelle aus Schlüssel-Wert-Paaren |
-| Speicherbereich bei Zuweisung geteilt          | ja     | ja (aber unveränderlich)  | ja (aber Zugriffsoperator nicht anwendbar)   | ja         |
-| Methode .copy() definiert                      | ja     | nein  | ja     | ja         |
-| Slice-Operator anwendbar                       | ja     | ja    | nein   | ja (nach Schlüssel) |
+| Description                            | flexible number of elements of any type | elements of any type, immutable | unordered collection, each element contained only once | mapping table of key-value pairs |
+| Memory area shared on assignment          | yes     | yes (but immutable)  | yes (but access operator not applicable)   | yes         |
+| .copy() method defined                      | yes     | no  | yes     | yes         |
+| Slice operator applicable                       | yes     | yes    | no     | yes (by key) |
 
 &nbsp;
 
-## Löschen: das Schlüsselwort del
-Um Sammeltypen, Elemente oder Slices zu löschen kann das Schlüsselwort `del` verwendet werden.
+## Deleting: the del keyword
+The `del` keyword can be used to delete collection types, elements, or slices.
 
 ```{python}
-# Löschen einer Liste
-del liste1
+# Deleting a list
+del list1
 
-# Löschen eines Indexbereichs aus einer Liste
-print("Liste vor dem Löschen:", liste2)
-del liste2[1:3]
-print("Liste nach dem Löschen:", liste2)
+# Deleting an index range from a list
+print("List before deletion:", list2)
+del list2[1:3]
+print("List after deletion:", list2)
 
-# Löschen eines Schlüsselworts aus einem Dictionary
-print("Dictionary vor dem Löschen", dictionary1)
+# Deleting a key from a dictionary
+print("Dictionary before deletion", dictionary1)
 del dictionary1[1]
-print("Dictionary nach dem Löschen", dictionary1)
+print("Dictionary after deletion", dictionary1)
 ```
 
-## Funktionen
-Die Sammeltypen können ineinander umgewandelt werden.
+## Functions
+The collection types can be converted into each other.
 
 ```{python}
-dictionary = {1: 'Kater', 2: 'Fähre', 3: 'Ricke'}
-print( (liste := list(dictionary)) )
-print( (menge := set(liste)) )
-print( (tupel := tuple(menge)) )
+dictionary = {1: 'Tomcat', 2: 'Ferry', 3: 'Doe'}
+print( (my_list := list(dictionary)) )
+print( (my_set := set(my_list)) )
+print( (my_tuple := tuple(my_set)) )
 
 ```
 
-Einige praktische Funktionen lassen sich auch auf Sammeltypen anwenden:
+Some useful functions can also be applied to collection types:
 
-* `len()` gibt die Anzahl der Elemente in einem Sammeltyp zurück.
-* `min()`, `max()`, `sum()` gibt das Minimum, Maximum bzw. die Summe eines Sammeltyps zurück (bei Dictionaries wird die Anzahl der Schlüssel gezählt).
+* `len()` returns the number of elements in a collection type.
+* `min()`, `max()`, `sum()` return the minimum, maximum, or sum of a collection type, respectively (for dictionaries, these functions operate on the keys).
 
-## Operationen: Verwendung von Schleifen
-Um arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste 'zahlen' durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste 'quadratzahlen' angehängt. Auch wird geprüft, ob die quadrierten Zahlen ganzzahlig durch 3 teilbar sind und das Prüfergebnis in einer Liste 'modulo_3' gespeichert.
+## Operations: using loops
+A `for` loop is used to apply arithmetic and logical operators to the elements stored in a collection type. In the following example, a list `numbers` is iterated over, the numbers stored in it are squared, and each result is appended to the list `squared_numbers`. It is also checked whether the squared numbers are evenly divisible by 3, and the result of that check is stored in a list `modulo_3`.
 
-::: {#lst-quadratzahlen}
+::: {#lst-squared-numbers}
 ``` {python}
-zahlen = list(range(1, 11))
+numbers = list(range(1, 11))
 
-quadratzahlen = [] # die Liste muss vor der Schleife angelegt werden
-modulo_3 = [] # leere Liste vor der Schleife anlegen
+squared_numbers = [] # the list must be created before the loop
+modulo_3 = [] # create an empty list before the loop
 
-for zahl in zahlen:
-  quadratzahl = zahl ** 2
-  quadratzahlen.append(quadratzahl)
-  modulo_3.append(quadratzahl % 3 == 0)
+for number in numbers:
+  squared_number = number ** 2
+  squared_numbers.append(squared_number)
+  modulo_3.append(squared_number % 3 == 0)
 
-print(quadratzahlen)
+print(squared_numbers)
 print(modulo_3)
 ```
 
 :::
 
-## Aufgaben Sammeltypen
-1. Modifizieren Sie den Programmcode in @lst-quadratzahlen so, dass nur die Quadratzahlen gespeichert werden, die ganzzahlig durch 3 teilbar sind.
+## Exercises: collection types
+1. Modify the code in @lst-squared-numbers so that only the squared numbers divisible by 3 are stored.
 
-2. Umrechnung von Geschwindigkeiten
-Erstellen Sie ein Skript, welches eine Umrechnungstabelle für Geschwindigkeiten erzeugt. Folgende Randbedingungen sollen beachtet werden:
+2. Converting speeds
+Write a script that generates a conversion table for speeds. The following conditions should be observed:
 
-* Die Umrechnung soll von km/h in m/s erfolgen.
+* The conversion should go from km/h to m/s.
 
-* Der Start- und Endwert soll in km/h frei wählbar sein, wobei beide ganzzahlig sein sollen.
+* The start and end values should be freely selectable in km/h, and both should be integers.
 
-* Die Anzahl der Umrechnungspunkte soll definiert werden können und die Zwischenschritte (in km/h) immer als ganze Zahlen ausgegeben werden.
+* The number of conversion points should be configurable, and the intermediate steps (in km/h) should always be output as whole numbers.
 
-*Tipp: In Ihrem Skript können Sie die Funktion [input()](https://docs.python.org/3/library/functions.html#input) verwenden, um Werte per Eingabe zu erfassen.*
+*Tip: In your script, you can use the [input()](https://docs.python.org/3/library/functions.html#input) function to capture values via user input.*
 
-3. Sortieren: Gegeben ist die Liste `meine_liste = list(range(9, 0, -1))`. Diese soll mittels for-Schleifen sortiert werden.    
+3. Sorting: Given the list `my_list = list(range(9, 0, -1))`. Sort it using `for` loops.
 
-::: {#tip-musterlösungsammeltypen .callout-tip collapse="true"}
-## Musterlösung Aufgaben Sammeltypen
+::: {#tip-solution-collection-types .callout-tip collapse="true"}
+## Sample solution: exercises collection types
 
-1. Ganzzahlig durch 3 teilbare Quadratzahlen
+1. Squared numbers divisible by 3
 ``` {python}
-zahlen = list(range(1, 11))
+numbers = list(range(1, 11))
 
-quadratzahlen = [] # die Liste muss vor der Schleife angelegt werden
-modulo_3 = [] # leere Liste vor der Schleife anlegen
+squared_numbers = [] # the list must be created before the loop
+modulo_3 = [] # create an empty list before the loop
 
-for zahl in zahlen:
-  quadratzahl = zahl ** 2
-  if quadratzahl % 3 == 0:
-    quadratzahlen.append(quadratzahl)
+for number in numbers:
+  squared_number = number ** 2
+  if squared_number % 3 == 0:
+    squared_numbers.append(squared_number)
 
-print(quadratzahlen)
+print(squared_numbers)
 ```
 
-2. Umrechnung von Geschwindigkeiten
+2. Converting speeds
 
 ```{python}
-# Freie Eingabe
-## start = int(input("Startwert in Kilometer pro Stunde eingeben."))
-## ende = int(input("Endwert in Kilometer pro Stunde eingeben."))
-## ausgabeschritte =  int(input("Anzahl auszugebener Schritte ein geben."))
+# Free-form input
+## start = int(input("Enter the start value in kilometers per hour."))
+## end = int(input("Enter the end value in kilometers per hour."))
+## output_steps =  int(input("Enter the number of steps to output."))
 
-# Fixe Werte für die Lösung
+# Fixed values for the solution
 start = 5
-ende = 107
-ausgabeschritte = 8
+end = 107
+output_steps = 8
 
-# Liste für km erstellen
-schrittweite = (ende - start) / (ausgabeschritte - 1)
-liste_km = []
-for i in range(ausgabeschritte):
-    liste_km.append(round(start + i * schrittweite))
+# Create the list of km values
+step_size = (end - start) / (output_steps - 1)
+km_list = []
+for i in range(output_steps):
+    km_list.append(round(start + i * step_size))
 
-# Umrechnung
-# meter = 1000 * kilometer
-# Sekunde = Stunde * 60 * 60
-liste_m = []
-for wert in liste_km:
-    liste_m.append(round((wert * 1000) / (60 * 60), 2))
+# Conversion
+# meters = 1000 * kilometers
+# seconds = hours * 60 * 60
+m_list = []
+for value in km_list:
+    m_list.append(round((value * 1000) / (60 * 60), 2))
 
-# Ausgabe
-print(f"Schrittweite: {schrittweite:.2f}")
-print("Kilometer pro Stunde")
-print(liste_km)
-print("Meter pro Sekunde")
-print(liste_m)
+# Output
+print(f"Step size: {step_size:.2f}")
+print("Kilometers per hour")
+print(km_list)
+print("Meters per second")
+print(m_list)
 ```
 
-3. Sortieren: Bubble Sort Algorithmus
+3. Sorting: bubble sort algorithm
 ```{python}
 
-# statische Liste, Textausgabe
-meine_liste = list(range(9, 0, -1))
+# static list, text output
+my_list = list(range(9, 0, -1))
 
-if len(meine_liste) > 1: 
+if len(my_list) > 1:
 
-    print("Liste zu Beginn\t\t  :", meine_liste)
+    print("List at the start\t\t  :", my_list)
 
-    # äußere Schleife
-    Schritt = 0
-    for i in range(len(meine_liste) - 1):
+    # outer loop
+    step = 0
+    for i in range(len(my_list) - 1):
 
-    # innere Schleife
-        for j in range(len(meine_liste) - 1):
-            if meine_liste[j] > meine_liste[j + 1]:
-                meine_liste[j], meine_liste[j + 1] = meine_liste[j + 1], meine_liste[j]
+    # inner loop
+        for j in range(len(my_list) - 1):
+            if my_list[j] > my_list[j + 1]:
+                my_list[j], my_list[j + 1] = my_list[j + 1], my_list[j]
 
-        Schritt += 1
-        print("Liste nach Schritt ", Schritt, ":", meine_liste)
+        step += 1
+        print("List after step ", step, ":", my_list)
 
-    print("\nListe sortiert:", *meine_liste) # * unterdrückt die Kommas zwischen den Listenelementen
+    print("\nSorted list:", *my_list) # * suppresses the commas between list elements
 
 else:
-    print("Die Liste muss mindenstens zwei Elemente enthalten!")
+    print("The list must contain at least two elements!")
 
 ```
 
 :::
 
-&nbsp;  
+&nbsp;
 (@Arnold-2023-schleifen-abzweigungen)

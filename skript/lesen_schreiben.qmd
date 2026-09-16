@@ -138,7 +138,7 @@ If you **do not use a `with` block**, you must close the file yourself –
 otherwise it stays open:
 
 ```{python}
-file = open("01-daten/beispiel.txt", "w")
+file = open("test.txt", "w")
 file.write("This is a test.")
 file.close()
 ```

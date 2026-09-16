@@ -76,7 +76,7 @@ print("Has umbrella?", has_umbrella)
 print("Type of 'is_sunny':", type(is_sunny))
 ```
 
-Booleans are especially useful in **conditions** and **comparisons**, which you will learn more about in Chapter 4.
+Booleans are especially useful in **conditions** and **comparisons**, which you will learn more about in Chapter 3.
 
 ## Doing Math with Numbers
 

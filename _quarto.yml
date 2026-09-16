@@ -4,39 +4,40 @@ project:
 book:
   # Metadaten / meta data
   title: "Bausteine Computergestützter Datenanalyse"
-  # subtitle: "Werkzeugbaustein Python"
+  # subtitle: "Python Tool Module"
   author:
     - Lukas Arnold
     - Simone Arnold
     - Florian Bagemihl
     - Matthias Baitsch
     - Marc Fehr
+    - Franca Hollmann
     - Maik Poetzsch
     - Sebastian Seipel
   date: today # "2024-03-05" Jahr-Monat-Tag / year-month-day
 
   sidebar:
-    title: "Werkzeugbaustein Python"
-    logo: "skript/00-bilder/logo_with_text_new.svg"    
-   
+    title: "Python Tool Module"
+    logo: "skript/00-bilder/logo_with_text_new.svg"
+
 ## Bibliographie / bibliography
 bibliography: bibliography.bib
 biblio-style: authoryear
 
 ## Spracheinstellungen / language settings
-lang: de
+lang: en
 language:
-  de:
+  en:
     crossref-imp-title: "Definition"
     crossref-imp-prefix: "Definition"
-    crossref-lst-title: "Code-Block"
-    crossref-lst-prefix: "Code-Block"
-    crossref-nte-title: "Beispiel"
-    crossref-nte-prefix: "Beispiel"
-    crossref-tip-title: "Tipp"
-    crossref-tip-prefix: "Tipp"
-    crossref-wrn-title: "Hinweis"
-    crossref-wrn-prefix: "Hinweis"
+    crossref-lst-title: "Code Block"
+    crossref-lst-prefix: "Code Block"
+    crossref-nte-title: "Example"
+    crossref-nte-prefix: "Example"
+    crossref-tip-title: "Tip"
+    crossref-tip-prefix: "Tip"
+    crossref-wrn-title: "Note"
+    crossref-wrn-prefix: "Note"
 
 ## Formatoption / formating options
 format:
@@ -44,18 +45,18 @@ format:
     ## Logo
     ### Logo in Quarto Books
     favicon: "skript/00-bilder/favicon_bcd_new.svg"
-    
+
     ### Logo in HTML
     include-in-header:
       text: |
         <link rel="shortcut icon" href="skript/00-bilder/favicon_bcd_new.svg" />
         <link rel="icon" type="image/x-icon" href="logo.ico">
-    
+
     default-image-extension: svg
     code-copy: true # hover is default
   pdf:
     cite-method: biblatex
-    biblio-title: Quellen
+    biblio-title: References
     default-image-extension: pdf # Vektorgrafiken werden als PDF eingebunden / vector grafics are embedded as PDF
 
 ## Inhaltsverzeichnis / table of contents
@@ -66,13 +67,13 @@ number-depth: 2
 ## Objekteinstellungen / object options
 cap-location: bottom
 fig-align: center
-mermaid: 
-  theme: neutral 
+mermaid:
+  theme: neutral
 
 execute:
   freeze: auto
 
 profile:
   default: full
-  group: 
+  group:
     - [full]

@@ -1,116 +1,116 @@
-# Lernzielkontrolle
+# Assessment
 
-## Aufgabe 1: Datentypen und Typecasting
+## Task 1: Data Types and Type Casting
 
-Gegeben sind folgende Werte:
+Given the following values:
 
-- `wert1 = "42"`
-- `wert2 = 3.5`
-- `wert3 = True`
+- `value1 = "42"`
+- `value2 = 3.5`
+- `value3 = True`
 
-Gib mit `type()` den Datentyp jedes Werts aus und wandle jeden in einen anderen sinnvollen Typ um. Gib die Ergebnisse aus.
-
----
-
-## Aufgabe 2: Altersprüfung mit Bedingung
-
-Gegeben sei `alter = 16`.  
-Gib abhängig vom Alter aus:
-
-- „Volljährig“, wenn das Alter ≥ 18 ist
-- „Minderjährig“, wenn das Alter < 18 ist
+Print the data type of each value using `type()`, and convert each one into another meaningful type. Print the results.
 
 ---
 
-## Aufgabe 3: Zahlen filtern und mitteln
+## Task 2: Age Check with a Condition
 
-Gegeben sei die Liste:
+Given `age = 16`.
+Depending on the age, print:
+
+- "Adult" if the age is ≥ 18
+- "Minor" if the age is < 18
+
+---
+
+## Task 3: Filtering and Averaging Numbers
+
+Given the list:
 
 ```python
-zahlen = [5, 8, 13, 20, 33, 40]
+numbers = [5, 8, 13, 20, 33, 40]
 ```
 
-- Gib alle Zahlen > 10 aus.
-- Berechne und gib den Durchschnitt dieser Zahlen aus.
+- Print all numbers > 10.
+- Calculate and print the average of these numbers.
 
 ---
 
-## Aufgabe 4: Wochentage & Slicing
+## Task 4: Weekdays & Slicing
 
-Gegeben sei:
+Given:
 
 ```python
-tage = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 ```
 
-- Gib alle Wochentage aus, die mit „S“ beginnen.
-- Gib nur die Arbeitstage (Mo–Fr) mit Slicing aus.
+- Print all weekdays that start with "S".
+- Print only the workdays (Mon–Fri) using slicing.
 
 ---
 
-## Aufgabe 5: Funktion mit Parameter & Standardwert
+## Task 5: Function with Parameter & Default Value
 
-Erstelle eine Funktion `begruesse(name, sprache="de")`, die je nach Sprache Folgendes ausgibt:
+Create a function `greet(name, language="en")` that prints the following depending on the language:
 
-- Deutsch: „Hallo <Name>!“
-- Englisch: „Hello <Name>!“
-
----
-
-## Aufgabe 6: Hobbys in Datei schreiben
-
-Gegeben sei eine Liste `hobbys = ["Lesen", "Kochen", "Sport"]`.
-
-Schreibe jeden Eintrag in eine neue Zeile der Datei `hobbys.txt`.
+- German: "Hallo <name>!"
+- English: "Hello <name>!"
 
 ---
 
-## Aufgabe 7: Datei lesen & .split() verwenden
+## Task 6: Writing Hobbies to a File
 
-Angenommen, eine Datei enthält die Zeile:
+Given a list `hobbies = ["Reading", "Cooking", "Sports"]`.
+
+Write each entry to a new line of the file `hobbies.txt`.
+
+---
+
+## Task 7: Reading a File & Using .split()
+
+Suppose a file contains the line:
 
 ```
 Ali,Bente,Carlos,Dana
 ```
 
-- Zerlege die Zeichenkette mit `.split(",")`.
-- Gib jeden Namen einzeln aus.
+- Split the string using `.split(",")`.
+- Print each name individually.
 
 ---
 
-## Aufgabe 8: Namen sortieren und speichern
+## Task 8: Sorting and Saving Names
 
-Gegeben sei:
+Given:
 
 ```python
-namen = ["Zoe", "Anna", "Lukas", "Ben"]
+names = ["Zoe", "Anna", "Lukas", "Ben"]
 ```
 
-- Sortiere die Liste alphabetisch.
-- Speichere die sortierte Liste in eine Datei `sortiert.txt`, ein Name pro Zeile.
+- Sort the list alphabetically.
+- Save the sorted list to a file `sorted.txt`, one name per line.
 
 ---
 
-## Aufgabe 9: Zahlen durch 3 ausgeben
+## Task 9: Print Numbers Divisible by 3
 
-Erstelle mit einer Schleife eine Liste aller Zahlen zwischen 1 und 20, die durch 3 teilbar sind, und gib sie aus.
+Use a loop to create a list of all numbers between 1 and 20 that are divisible by 3, and print it.
 
 ---
 
-## Aufgabe 10: Verschachtelte Schleifen
+## Task 10: Nested Loops
 
-Gegeben seien:
+Given:
 
 ```python
-personen = ["Ali", "Bente"]
-hobbys = ["Lesen", "Sport"]
+people = ["Ali", "Bente"]
+hobbies = ["Reading", "Sports"]
 ```
 
-Erstelle eine Ausgabe wie:
+Create output like:
 
 ```
-Ali hat das Hobby: Lesen
-Ali hat das Hobby: Sport
-Bente hat das Hobby: Lesen
-Bente hat das Hobby: Sport
+Ali has the hobby: Reading
+Ali has the hobby: Sports
+Bente has the hobby: Reading
+Bente has the hobby: Sports
 ```

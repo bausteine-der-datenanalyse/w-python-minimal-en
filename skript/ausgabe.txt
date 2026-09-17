@@ -1,2 +1,2 @@
-Das ist eine neue Zeile.
-Und noch eine.
+This is a new line.
+And another one.

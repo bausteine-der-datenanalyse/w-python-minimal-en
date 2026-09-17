@@ -16,3 +16,4 @@
 
 # Ignore VS Code configuration
 .vscode/
+**/*.quarto_ipynb
